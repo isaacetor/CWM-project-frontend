@@ -1,18 +1,22 @@
 import React from "react";
+import { BsPerson } from "react-icons/bs";
 import styled from "styled-components";
 import AdminSidebar from "./AdminDashboardSidebar";
 
-const AdminDashboard = () => {
+const Adminmessage = () => {
   return (
     <div>
       <Container>
         <Wrapper>
-          <Text>Welcome Back , Favour 👋</Text>
+          {/* title */}
+          <Text>
+            Send Broadcast or Message A Client
+            <BsPerson style={{ fontSize: "25px" }} />
+          </Text>
           <Main>
             <First>
-              <Income></Income>
-              <Analytic></Analytic>
-              <Transaction></Transaction>
+              {/* where to create message form field */}
+              <Analytics></Analytics>
             </First>
             {/* sidebar */}
             <AdminSidebar />
@@ -23,27 +27,21 @@ const AdminDashboard = () => {
   );
 };
 
-export default AdminDashboard;
+export default Adminmessage;
 
-const Transaction = styled.div`
+const Analytics = styled.div`
   width: 100%;
-  height: 45vh;
-  background-color: #1d1d41;
-  border-radius: 20px;
-`;
-
-const Analytic = styled.div`
-  width: 100%;
-  height: 45vh;
+  height: 100vh;
   background-color: #1d1d41;
   margin-bottom: 20px;
+  margin-top: 20px;
   border-radius: 20px;
 `;
 
 const Income = styled.div`
   width: 100%;
   height: 20vh;
-  background-color: #49e307;
+  background-color: #ea06ee;
   margin-bottom: 20px;
 `;
 
@@ -66,6 +64,9 @@ const Text = styled.div`
   margin-bottom: 10px;
   margin-top: 20px;
   margin-left: 15px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 `;
 
 const Wrapper = styled.div`
