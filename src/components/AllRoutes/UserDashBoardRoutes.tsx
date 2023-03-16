@@ -5,6 +5,7 @@ import UserDashboardHeader from "../Dashboard/UserDashboard/UserDashboardHeader"
 import UserDashboardSidebar from "../Dashboard/UserDashboard/UserDashboardSidebar";
 import UserDashboardHome from "../Dashboard/UserDashboard/UserDashboardHome";
 import MakePayment from "../Dashboard/UserDashboard/MakePayment/MakePayment";
+import ClickWhatsApp from "../Dashboard/UserDashboard/ClickWhatsApp";
 
 const UserDashBoardRoutes = () => {
   const elements = useRoutes([
@@ -21,7 +22,7 @@ const UserDashBoardRoutes = () => {
     <Container>
       <UserDashboardHeader />
       {elements}
-      <UserDashboardSidebar />
+      <ClickWhatsApp />
     </Container>
   );
 };
@@ -30,5 +31,5 @@ export default UserDashBoardRoutes;
 
 const Container = styled.div`
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
 `;
