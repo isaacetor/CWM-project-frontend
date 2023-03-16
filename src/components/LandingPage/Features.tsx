@@ -2,9 +2,9 @@ import React from "react";
 import { FiArrowUpRight } from "react-icons/fi";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
-import hero from "../../../Assets/Payment_Information.svg";
-import support from "../../../Assets/customer_support.svg";
-import bill from "../../../Assets/Printing_invoices.svg";
+import hero from "../../Assets/Payment_Information.svg";
+import support from "../../Assets/customer_support.svg";
+import bill from "../../Assets/Printing_invoices.svg";
 
 const Features = () => {
   return (

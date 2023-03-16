@@ -11,7 +11,6 @@ const HomeScreen = () => {
   return (
     <div>
       <Hero />
-
       <ManageAccount />
       <TrustedBy />
       <Profile />
