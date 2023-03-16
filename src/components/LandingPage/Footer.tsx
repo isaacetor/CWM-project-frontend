@@ -37,8 +37,8 @@ const Container = styled.div`
       font-size: 14px;
     }
 
-    @media screen and (min-width: 320px) {
-      text-align: center;
+    @media (min-width: 320px) and (max-width: 375px) {
+      text-align: justify;
     }
   }
   a {

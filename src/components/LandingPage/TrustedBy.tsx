@@ -50,6 +50,9 @@ const Clients = styled.div`
     @media screen and (max-width: 800px) {
       width: 20%;
     }
+    @media screen and (min-width: 375px) {
+      width: 15%;
+    }
   }
 
   @media screen and (max-width: 800px) {
