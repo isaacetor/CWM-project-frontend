@@ -236,7 +236,7 @@ const Two = styled.div`
 `;
 
 const Bottom = styled.div`
-  width: 80%;
+  width: 100%;
   margin-top: 30px;
 
   @media screen and (max-width: 768px) {
