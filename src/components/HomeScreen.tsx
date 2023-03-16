@@ -11,12 +11,13 @@ const HomeScreen = () => {
   return (
     <div>
       <Hero />
-      <Footer />
+
       <ManageAccount />
       <TrustedBy />
       <Profile />
       <Features />
       <GetStarted />
+      <Footer />
     </div>
   );
 };
