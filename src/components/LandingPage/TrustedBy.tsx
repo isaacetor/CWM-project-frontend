@@ -1,11 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-import dangote from "../../../Assets/Dangote.png";
-import dhl from "../../../Assets/dhl.png";
-import globus from "../../../Assets/globus.png";
-import stanbic from "../../../Assets/Stanbic-Bank.jpg";
-import wema from "../../../Assets/Wema-Bank.jpg";
-import zenith from "../../../Assets/zenith.png";
+import dangote from "../../Assets/Dangote.png";
+import dhl from "../../Assets/dhl.png";
+import globus from "../../Assets/globus.png";
+import stanbic from "../../Assets/Stanbic-Bank.jpg";
+import wema from "../../Assets/Wema-Bank.jpg";
+import zenith from "../../Assets/zenith.png";
 
 const TrustedBy = () => {
   return (

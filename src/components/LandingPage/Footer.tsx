@@ -9,7 +9,7 @@ const Footer = () => {
         <p>
           Developed by{" "}
           <a href="mailto:isaacetor7@gmail.com">
-            Isaac Etor,Esther Ogbu et Favour Yusuf
+            Isaac Etor,Esther Ogbu & Favour Yusuf
           </a>{" "}
         </p>
       </Container>
