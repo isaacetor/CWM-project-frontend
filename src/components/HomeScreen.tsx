@@ -1,4 +1,5 @@
 import React from "react";
+import Features from "./LandingPage/Features";
 import Footer from "./LandingPage/Footer";
 import Hero from "./LandingPage/Hero";
 import ManageAccount from "./LandingPage/ManageAccount";
@@ -13,6 +14,7 @@ const HomeScreen = () => {
       <ManageAccount />
       <TrustedBy />
       <Profile />
+      <Features />
     </div>
   );
 };
