@@ -174,6 +174,10 @@ const Left = styled.div`
   @media screen and (max-width: 1440px) {
     min-width: 50%;
   }
+  /* @media screen and (min-width: 320px) {
+    width: 100%;
+    height: 50vh;
+  } */
 `;
 const Wrapper = styled.div`
   width: 100%;
@@ -184,6 +188,9 @@ const Wrapper = styled.div`
   @media screen and (max-width: 768px) {
     width: 100%;
   }
+  /* @media screen and (min-width: 320px) {
+    width: 100%;
+  } */
 `;
 const Container = styled.div`
   width: 100%;

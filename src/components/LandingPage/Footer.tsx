@@ -9,7 +9,7 @@ const Footer = () => {
         <p>
           Developed by{" "}
           <a href="mailto:isaacetor7@gmail.com">
-            Isaac Etor,Esther Ogbu et Favour Yusuf
+            Isaac Etor,Esther Ogbu & Favour Yusuf
           </a>{" "}
         </p>
       </Container>
@@ -35,6 +35,10 @@ const Container = styled.div`
 
     @media screen and (max-width: 768px) {
       font-size: 14px;
+    }
+
+    @media (min-width: 320px) and (max-width: 375px) {
+      text-align: justify;
     }
   }
   a {

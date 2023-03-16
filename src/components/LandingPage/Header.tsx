@@ -1,23 +1,75 @@
 import React from "react";
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
+import { FiArrowUpRight } from "react-icons/fi";
+import { AiOutlineArrowUp } from "react-icons/ai";
+import { animateScroll as scroll } from "react-scroll";
 
 const Header = () => {
+  const [show, setShow] = React.useState(false);
+  const [toTopshow, settoTopShow] = React.useState(false);
+
+  const changeHeaderColor = () => {
+    if (window.scrollY >= 80) {
+      setShow(true);
+    } else {
+      setShow(false);
+    }
+  };
+  const showBacktoTop = () => {
+    if (window.scrollY >= 400) {
+      settoTopShow(true);
+    } else {
+      settoTopShow(false);
+    }
+  };
+  const backToTop = () => {
+    scroll.scrollToTop();
+  };
+
+  window.addEventListener("scroll", showBacktoTop);
+  window.addEventListener("scroll", changeHeaderColor);
+
+  const toHero = () => {
+    scroll.scrollTo(750);
+  };
+  const toInterface = () => {
+    scroll.scrollTo(1110);
+  };
+  const toFeatures = () => {
+    scroll.scrollTo(2300);
+  };
+  const toSupport = () => {
+    scroll.scrollTo(2950);
+  };
   return (
     <div>
-      <Container>
+      <Container
+        boxShadow={show ? "value" : ""}
+        bg={
+          show
+            ? "#fff"
+            : "linear-gradient(90deg, #fff 50.01%, #000000 49.99%, #000000 100%)"
+        }>
         <Wrapper>
-          <Logo>Continental</Logo>
-          <Nav>
-            <Navigation>About</Navigation>
-            <Navigation>Features</Navigation>
-            <Navigation>Customer support</Navigation>
-            <Navigation>About</Navigation>
+          <Logo onClick={backToTop}>Continental</Logo>
+          <Nav color={show ? "#000" : "#ffffffc3"}>
+            <Navigation onClick={toHero}>Trustees</Navigation>
+            <Navigation onClick={toInterface}>Interface</Navigation>
+            <Navigation onClick={toFeatures}>Features</Navigation>
+            <Navigation onClick={toSupport}>Customer support</Navigation>
             <NavLink to="/signin" style={{ textDecoration: "none" }}>
-              <Button>sign in</Button>
+              <Button color={show ? "#000" : "#fff"}>
+                Get Started <FiArrowUpRight />
+              </Button>
             </NavLink>
           </Nav>
         </Wrapper>
+        {toTopshow ? (
+          <BackToTop onClick={backToTop}>
+            <AiOutlineArrowUp />
+          </BackToTop>
+        ) : null}
       </Container>
     </div>
   );
@@ -25,10 +77,29 @@ const Header = () => {
 
 export default Header;
 
+const BackToTop = styled.div`
+  padding: 10px 15px;
+  background-color: #fff;
+  border-radius: 50px;
+  position: absolute;
+  position: fixed;
+  bottom: 20px;
+  right: 50px;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+  font-size: 20px;
+  transition: all 0.5s ease;
+
+  :hover {
+    cursor: pointer;
+  }
+`;
+
 const Navigation = styled.p`
   margin: 0;
   margin-left: 40px;
-  font-size: 15px;
+  font-size: 13px;
+  transition: all 0.2s ease;
+  text-transform: capitalize;
 
   @media screen and (max-width: 768px) {
     display: none;
@@ -36,26 +107,37 @@ const Navigation = styled.p`
 
   :hover {
     cursor: pointer;
+    color: #5057fd;
   }
 `;
 
-const Button = styled.button`
+const Button = styled.button<{ color: string }>`
   padding: 10px 25px;
-  font-size: 17px;
-  background-color: #da5d00;
+  font-size: 14px;
+  background-color: transparent;
   border: 0;
-  color: #fff;
+  color: ${({ color }) => color};
   margin-left: 40px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: all 0.2s ease;
+
+  @media screen and (min-width: 320px) {
+    padding: 5px 10px;
+  }
 
   :hover {
     cursor: pointer;
+    color: #5057fd;
   }
 `;
 
-const Nav = styled.div`
+const Nav = styled.div<{ color: string }>`
   height: 70%;
   display: flex;
   align-items: center;
+  color: ${({ color }) => color};
 `;
 const Logo = styled.div`
   display: flex;
@@ -63,6 +145,10 @@ const Logo = styled.div`
   color: #000;
   font-size: 1.5rem;
   font-weight: 500;
+
+  :hover {
+    cursor: pointer;
+  }
 `;
 
 const Wrapper = styled.div`
@@ -74,20 +160,21 @@ const Wrapper = styled.div`
   justify-content: space-between;
 `;
 
-const Container = styled.div`
+const Container = styled.div<{
+  boxShadow: string;
+  bg: string;
+}>`
   width: 100%;
-  height: 10vh;
-  background: linear-gradient(
-    90deg,
-    rgba(247, 247, 247, 1) 50.01%,
-    #000000 49.99%,
-    #000000 100%
-  );
+  height: 70px;
+  background: ${({ bg }) => bg};
   display: flex;
   flex-wrap: wrap;
-  /* position: fixed; */
-  z-index: 1;
-  left: 0;
-  top: 0px;
-  color: #fff;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  transition: all 350ms ease;
+
+  color: ${({ color }) => color};
+  box-shadow: ${({ boxShadow }) =>
+    boxShadow ? "rgba(99, 99, 99, 0.079) 0px 2px 8px 0px" : "none"};
 `;
