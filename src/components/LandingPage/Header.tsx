@@ -123,6 +123,10 @@ const Button = styled.button<{ color: string }>`
   gap: 5px;
   transition: all 0.2s ease;
 
+  @media screen and (min-width: 320px) {
+    padding: 5px 10px;
+  }
+
   :hover {
     cursor: pointer;
     color: #5057fd;

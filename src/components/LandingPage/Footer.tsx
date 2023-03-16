@@ -36,6 +36,10 @@ const Container = styled.div`
     @media screen and (max-width: 768px) {
       font-size: 14px;
     }
+
+    @media screen and (min-width: 320px) {
+      text-align: center;
+    }
   }
   a {
     text-decoration: underline;
