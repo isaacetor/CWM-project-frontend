@@ -30,5 +30,5 @@ export default UserDashBoardRoutes;
 
 const Container = styled.div`
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
 `;
