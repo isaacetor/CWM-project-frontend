@@ -2,7 +2,7 @@ import React from "react";
 import { FiArrowUpRight } from "react-icons/fi";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
-import bg from "../../../Assets/scatteredForcefields.svg";
+import bg from "../../Assets/scatteredForcefields.svg";
 
 const GetStarted = () => {
   return (

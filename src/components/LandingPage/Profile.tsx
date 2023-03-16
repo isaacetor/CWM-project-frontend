@@ -1,6 +1,6 @@
 import React from "react";
 import { FiArrowUpRight } from "react-icons/fi";
-import ewaste from "../../../Assets/eWasteMockUp.png";
+import ewaste from "../../Assets/eWasteMockUp.png";
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 

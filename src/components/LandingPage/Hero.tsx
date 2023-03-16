@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import hero from "../../../Assets/Waste_management.svg";
-import hero3 from "../../../Assets/Waste_management3.svg";
-import hero4 from "../../../Assets/waste-management4.svg";
+import hero from "../../Assets/Waste_management.svg";
+import hero3 from "../../Assets/Waste_management3.svg";
+import hero4 from "../../Assets/waste-management4.svg";
 import { FiArrowUpRight } from "react-icons/fi";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";

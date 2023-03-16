@@ -7,8 +7,70 @@ import dhl from "../../Assets/dhl.png";
 import stanbic from "../../Assets/Stanbic-Bank.jpg";
 import zenith from "../../Assets/zenith.png";
 import { NavLink } from "react-router-dom";
+import { useMutation } from "@tanstack/react-query";
+import { createClient } from "../Api/Endpoints";
+import Swal from "sweetalert2";
+import * as yup from "yup";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { useForm } from "react-hook-form";
+import { UseAppDispatch } from "../Global/Store";
+import { useNavigate } from "react-router-dom";
+import { registerClient } from "../Global/ReduxState";
 
 const Register = () => {
+  const dispatch = UseAppDispatch();
+
+  const navigate = useNavigate();
+
+  const userSchema = yup
+    .object({
+      name: yup.string().required("please enter a name"),
+      email: yup.string().required("please enter a email"),
+      password: yup.string().required("please enter a password"),
+      phoneNum: yup.number().required("please enter a phone number"),
+      address: yup.string().required("please enter a address"),
+      //   clientType: yup.string().required("please select a client type"),
+      //   confirmPassword: yup
+      //     .string()
+      //     .oneOf([yup.ref("password")], "passwords must match")
+      //     .required(),
+    })
+    .required();
+  type formData = yup.InferType<typeof userSchema>;
+
+  const {
+    handleSubmit,
+    formState: { errors },
+    reset,
+    register,
+  } = useForm<formData>({
+    resolver: yupResolver(userSchema),
+  });
+
+  const newClient = useMutation({
+    mutationFn: createClient,
+    mutationKey: ["registerAllClients"],
+
+    onSuccess: (data: any) => {
+      dispatch(registerClient(data.data.data));
+    },
+  });
+  const submit = handleSubmit((data) => {
+    newClient.mutate(data);
+    console.log("this is yup data", data);
+    reset();
+    Swal.fire({
+      title: "registration succesful",
+      //   html: "redirecting to login",
+      timer: 2000,
+      timerProgressBar: true,
+
+      willClose: () => {
+        navigate("/userdashboard");
+      },
+    });
+  });
+
   return (
     <div>
       <Container>
@@ -35,32 +97,49 @@ const Register = () => {
             </Message>
           </Right>
           <Left>
-            <Form>
+            <Form onSubmit={submit}>
               <h2>create an account</h2>
               <InputWrapper>
                 <InputHold>
-                  <p>Enter name</p>
-
-                  <input type="text" />
-                  {/* <input {...register("name", { required: true })} /> */}
-                  {/* <span>{errors?.name && errors?.name?.message}</span> */}
+                  <input
+                    {...register("name")}
+                    type="text"
+                    required
+                    placeholder="FullName"
+                  />
+                  <p>{errors?.name && errors?.name?.message} </p>
                 </InputHold>
                 <InputHold>
-                  <p>Enter Address</p>
-
-                  <input type="text" />
-                  {/* <input {...register("name", { required: true })} /> */}
-                  {/* <span>{errors?.name && errors?.name?.message}</span> */}
+                  <input
+                    {...register("email")}
+                    type="text"
+                    required
+                    placeholder="email"
+                  />
+                  <p>{errors?.email && errors?.email?.message} </p>
+                  <span>{errors?.address && errors?.address?.message}</span>
                 </InputHold>
                 <InputHold>
-                  <p>Enter PhoneNum</p>
-
-                  <input type="text" />
-                  {/* <input {...register("name", { required: true })} /> */}
-                  {/* <span>{errors?.name && errors?.name?.message}</span> */}
+                  <input
+                    {...register("phoneNum")}
+                    type="number"
+                    required
+                    placeholder="Phone Number"
+                    maxLength={11}
+                  />
+                  <span>{errors?.phoneNum && errors?.phoneNum?.message}</span>
                 </InputHold>
-                <InputHold2>
-                  <p style={{ marginBottom: "8px" }}>Select clientType</p>
+                <InputHold>
+                  <input
+                    {...register("address")}
+                    type="text"
+                    required
+                    placeholder="enter address"
+                  />
+                  <span>{errors?.phoneNum && errors?.phoneNum?.message}</span>
+                </InputHold>
+                {/* <InputHold2>
+                  <p style={{ marginBottom: "5px" }}>Select clientType</p>
                   <div style={{ display: "flex" }}>
                     <label>
                       Residential
@@ -68,9 +147,9 @@ const Register = () => {
                         type="radio"
                         name="options"
                         value="residential"
-                        // ref={() => {
-                        //   register("client");
-                        // }}
+                        ref={() => {
+                          register("clientType");
+                        }}
                       />
                     </label>
                     <label>
@@ -79,16 +158,18 @@ const Register = () => {
                         type="radio"
                         name="options"
                         value="commercial"
-                        // ref={() => {
-                        //   register("client");
-                        // }}
+                        ref={() => {
+                          register("clientType");
+                        }}
                       />
                     </label>
                   </div>
-                  {/* {errors?.client && <span>{errors?.client?.message}</span>} */}
-                </InputHold2>
-                <InputHold2>
-                  <p style={{ marginTop: "15px", marginBottom: "8px" }}>
+                  {errors?.clientType && (
+                    <span>{errors?.clientType?.message}</span>
+                  )}
+                </InputHold2> */}
+                {/* <InputHold2>
+                  <p style={{ marginTop: "10px", marginBottom: "5px" }}>
                     Select Location
                   </p>
                   <div style={{ display: "flex" }}>
@@ -97,25 +178,28 @@ const Register = () => {
                     <input type="radio" name="location" value="sari" />
                     <p>sari</p>
                   </div>
-                </InputHold2>
+                </InputHold2> */}
                 <InputHold>
-                  <p>Enter password</p>
-
-                  <input type="password" />
-                  {/* <input {...register("name", { required: true })} /> */}
-                  {/* <span>{errors?.name && errors?.name?.message}</span> */}
+                  <input
+                    {...register("password")}
+                    type="password"
+                    required
+                    placeholder="Enter Password"
+                    minLength={8}
+                    aria-hidden="true"
+                  />
+                  <span>{errors?.name && errors?.name?.message}</span>
                 </InputHold>
-                <InputHold>
+                {/* <InputHold>
                   <p>Confirm password</p>
 
-                  <input type="password" />
-                  {/* <input {...register("name", { required: true })} /> */}
-                  {/* <span>{errors?.name && errors?.name?.message}</span> */}
-                </InputHold>
-                <Button>Sign in</Button>
+                  <input {...register("password")} />
+                  <span>{errors?.name && errors?.name?.message}</span>
+                </InputHold> */}
+                <Button type="submit">create account</Button>
                 <span style={{ marginTop: "8px" }}>eWaste by I.E.F</span>
                 <span style={{ marginTop: "8px", marginBottom: "10px" }}>
-                  Have have an account?
+                  Already have have an account?
                   <NavLink
                     to="/signin"
                     style={{
@@ -189,8 +273,8 @@ const InputHold2 = styled.div`
 
 const InputHold = styled.div`
   width: 100%;
-  margin-bottom: 10px;
-  margin-top: 10px;
+  /* margin-bottom: 10px; */
+  /* margin-top: 10px; */
 
   p {
     margin: 0;
