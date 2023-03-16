@@ -69,6 +69,11 @@ const Desc = styled.p`
   @media screen and (max-width: 768px) {
     font-size: 14.5px;
   }
+
+  @media screen and (min-width: 320px) {
+    font-size: 10px;
+    /* padding: 5px 10px; */
+  }
 `;
 const Button = styled.button`
   padding: 17px 35px;
@@ -134,11 +139,20 @@ const LeftWrapper = styled.div<{ height: string }>`
   @media screen and (max-width: 768px) {
     height: ${({ height }) => height};
   }
+  @media screen and (min-width: 768px) {
+    height: ${({ height }) => height};
+  }
 
   img {
     @media screen and (max-width: 768px) {
       height: 100%;
       width: 100%;
+      object-fit: cover;
+    }
+
+    @media screen and (min-width: 320px) {
+      height: 100%;
+      /* width: 100%; */
       object-fit: cover;
     }
   }
@@ -159,6 +173,10 @@ const Right = styled.div`
   @media screen and (max-width: 1440px) {
     min-width: 50%;
   }
+  @media screen and (min-width: 320px) {
+    min-width: 100%;
+    /* height: 55vh; */
+  }
 `;
 
 const Left = styled.div`
@@ -174,6 +192,10 @@ const Left = styled.div`
   @media screen and (max-width: 1440px) {
     min-width: 50%;
   }
+  @media screen and (min-width: 320px) {
+    width: 100%;
+    height: 50vh;
+  }
 `;
 const Wrapper = styled.div`
   width: 100%;
@@ -182,6 +204,9 @@ const Wrapper = styled.div`
   flex-wrap: wrap;
 
   @media screen and (max-width: 768px) {
+    width: 100%;
+  }
+  @media screen and (min-width: 320px) {
     width: 100%;
   }
 `;

@@ -116,6 +116,11 @@ const Text = styled.div`
       padding: 10px 20px;
       margin-top: 20px;
     }
+
+    @media screen and (min-width: 320px) {
+      margin-top: 4px;
+      padding: 5px 10px;
+    }
   }
 
   h1 {
