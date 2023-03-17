@@ -48,13 +48,14 @@ const SignIn = () => {
     // },
 
     onSuccess: (myData) => {
+      console.log(myData);
       console.log("this is on success", dispatch(loginClients(myData.data)));
     },
   });
 
   const submit = handleSubmit((data) => {
     signin.mutate(data);
-    // console.log(`this is yup signin`, data);
+    console.log(`this is yup signin`, data);
     reset();
     Swal.fire({
       title: "login",
