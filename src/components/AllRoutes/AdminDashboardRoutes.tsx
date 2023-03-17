@@ -22,7 +22,7 @@ const AdminDashboardRoutes = () => {
       element: <Analytic />,
     },
     {
-      path: "/send-messag",
+      path: "/send-message",
       element: <Adminmessage />,
     },
     {
