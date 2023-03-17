@@ -7,10 +7,12 @@ const AdminDashboardHome = () => {
     <div>
       <Container>
         <Wrapper>
-          <Text>Welcome Back , Favour 👋</Text>
+          <Text>Welcome Back , admin 👋</Text>
           <Main>
             <First>
-              <Income></Income>
+              <Income>
+                <TodayIncome></TodayIncome>
+              </Income>
               <Analytic></Analytic>
               <Transaction></Transaction>
             </First>
@@ -24,6 +26,8 @@ const AdminDashboardHome = () => {
 };
 
 export default AdminDashboardHome;
+
+const TodayIncome = styled.div``;
 
 const Transaction = styled.div`
   width: 100%;

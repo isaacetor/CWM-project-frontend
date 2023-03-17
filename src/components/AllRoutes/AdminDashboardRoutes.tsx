@@ -49,5 +49,5 @@ export default AdminDashboardRoutes;
 
 const Container = styled.div`
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
 `;

@@ -8,9 +8,10 @@ function App() {
   return (
     <div>
       <HomeRoutes />
-      {/* <PrivateRoutes> */}
-      <UserDashBoardRoutes />
-      {/* </PrivateRoutes> */}
+      <PrivateRoutes>
+        <UserDashBoardRoutes />
+      </PrivateRoutes>
+
       <AdminDashboardRoutes />
     </div>
   );
