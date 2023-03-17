@@ -30,15 +30,7 @@ const HomeRoutes = () => {
       element: <SignIn />,
     },
   ]);
-  return (
-    <div>
-
-
-      {selector?.name ? null : <Header />}
-
-      {element}
-    </div>
-  );
+  return <div>{element}</div>;
 };
 
 export default HomeRoutes;
