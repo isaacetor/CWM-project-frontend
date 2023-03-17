@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { usePaystackPayment } from "react-paystack";
 import styled from "styled-components";
 import TransactionHistory from "../TransactionHistory";
 import UserDashboardSidebar from "../UserDashboardSidebar";
@@ -28,7 +29,7 @@ const MakePayment = () => {
   //   setTotal(areas + amount);
   // };
 
-  // const initializePayment = usePaystackPayment(config);
+  const initializePayment = usePaystackPayment(config);
 
   return (
     <div>
@@ -54,7 +55,12 @@ const MakePayment = () => {
                   </FundsHold>
                 </MoneyHolder>
                 <Button>
-                  <button type="submit" onClick={() => {}}>
+                  <button
+                    type="submit"
+                    onClick={() => {
+                      initializePayment(onSuccess, onClose);
+                    }}
+                  >
                     Pay Now
                   </button>
                 </Button>
