@@ -10,6 +10,18 @@ const AdminDashboardRoutes = () => {
       path: "/admin",
       element: <AdminDashboardHome />,
     },
+    {
+      path: "/analytic",
+      element: <AdminDashboardHome />,
+    },
+    {
+      path: "/message",
+      element: <AdminDashboardHome />,
+    },
+    {
+      path: "/notifications",
+      element: <AdminDashboardHome />,
+    },
   ]);
 
   return (

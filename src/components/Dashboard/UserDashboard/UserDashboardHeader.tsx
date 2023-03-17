@@ -16,20 +16,20 @@ const UserDashboardHeader = () => {
               <h1>Continental</h1>
             </Logo>
             <Navigation>
-              <Nav to="/">
+              <Nav to="/userdashboard">
                 <RxDashboard style={{ fontSize: "20px" }} /> Dashboard
               </Nav>
               <Nav to="/invoices">
                 <RiBillLine style={{ fontSize: "20px" }} /> View Bill
               </Nav>
-              <Nav to="/makepayment">
+              <Nav to="/payment">
                 <BsWallet2 style={{ fontSize: "20px" }} />
                 Make Payment
               </Nav>
-              <Nav to="/contact">
+              {/* <Nav to="/contact">
                 <BiSupport style={{ fontSize: "20px" }} />
                 Customer Support
-              </Nav>
+              </Nav> */}
               <Nav to="/profile">
                 <BsPerson style={{ fontSize: "20px" }} />
                 Profile

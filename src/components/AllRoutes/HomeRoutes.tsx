@@ -4,9 +4,17 @@ import Register from "../AuthPage/Register";
 import SignIn from "../AuthPage/SignIn";
 import HomeScreen from "../HomeScreen";
 import Header from "../LandingPage/Header";
+import { UseAppSelector } from "../Global/Store";
 
 const HomeRoutes = () => {
   const navigate = useNavigate();
+  const selector = UseAppSelector((state) => state.Client);
+
+  useEffect(() => {
+    if (selector?.name) {
+      navigate("");
+    }
+  });
 
   const element = useRoutes([
     {
@@ -24,7 +32,7 @@ const HomeRoutes = () => {
   ]);
   return (
     <div>
-      <Header />
+      {/* <Header /> */}
       {element}
     </div>
   );

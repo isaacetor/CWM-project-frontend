@@ -79,8 +79,9 @@ const MsgHold = styled.div`
     background: #f1f1f1;
     border-radius: 5px;
   }
-  ::-webkit-scrollbar-thumb:hover {
-    background: #555;
+
+  ::-webkit-scrollbar-thumb {
+    background: #121111;
     border-radius: 5px;
   }
   width: calc(100% - 20px);
