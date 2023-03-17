@@ -12,7 +12,7 @@ const HomeRoutes = () => {
 
   useEffect(() => {
     if (selector?.name) {
-      navigate("");
+      navigate("/signin");
     }
   });
 
