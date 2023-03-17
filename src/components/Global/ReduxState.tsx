@@ -42,6 +42,7 @@ const ReduxState = createSlice({
   },
 });
 
-export const { registerClient, registerAdmin } = ReduxState.actions;
+export const { registerClient, registerAdmin, logOut, logoutAdmin } =
+  ReduxState.actions;
 
 export default ReduxState.reducer;
