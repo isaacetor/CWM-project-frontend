@@ -10,15 +10,15 @@ import TrustedBy from "./LandingPage/TrustedBy";
 
 const HomeScreen = () => {
   return (
-    <div style={{ overflow: "hidden" }}>
+    <div>
       <Header />
       <Hero />
+      <Footer />
       <ManageAccount />
       <TrustedBy />
       <Profile />
       <Features />
       <GetStarted />
-      <Footer />
     </div>
   );
 };

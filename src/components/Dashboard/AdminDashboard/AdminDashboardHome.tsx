@@ -27,7 +27,11 @@ const AdminDashboardHome = () => {
 
 export default AdminDashboardHome;
 
-const TodayIncome = styled.div``;
+const TodayIncome = styled.div`
+  width: 350px;
+  height: 15vh;
+  background-color: #1d1d41;
+`;
 
 const Transaction = styled.div`
   width: 100%;
