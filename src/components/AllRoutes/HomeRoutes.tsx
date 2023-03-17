@@ -32,7 +32,7 @@ const HomeRoutes = () => {
   ]);
   return (
     <div>
-      {/* <Header /> */}
+      <Header />
       {element}
     </div>
   );
