@@ -1,5 +1,5 @@
 import axios from "axios";
-import { userData } from "../AllInterface/AllInterface";
+import { adminData } from "../AllInterface/AllInterface";
 
 const localURL: string = "http://localhost:8000/api/adminauth";
 // const liveURI = "https://serversideoncwm.onrender.com/"
@@ -9,7 +9,7 @@ export interface login {
   password: string;
 }
 
-export const createAdmin = async ({ name, email, password }: userData) => {
+export const createAdmin = async ({ name, email, password }: adminData) => {
   return await axios
     .post(`${localURL}/adminregister`, {
       name,
