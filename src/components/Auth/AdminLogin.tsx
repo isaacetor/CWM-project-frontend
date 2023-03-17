@@ -16,7 +16,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { UseAppDispatch } from "../Global/Store";
 import { useForm } from "react-hook-form";
 
-const SignIn = () => {
+const AdminLogin = () => {
   const dispatch = UseAppDispatch();
   const client = useQueryClient();
   const navigate = useNavigate();
@@ -151,7 +151,7 @@ const SignIn = () => {
   );
 };
 
-export default SignIn;
+export default AdminLogin;
 
 const Button = styled.button`
   margin-top: 20px;

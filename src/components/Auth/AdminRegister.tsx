@@ -17,7 +17,7 @@ import { UseAppDispatch } from "../Global/Store";
 import { useNavigate } from "react-router-dom";
 import { registerClient } from "../Global/ReduxState";
 
-const Register = () => {
+const AdminRegister = () => {
   const dispatch = UseAppDispatch();
 
   const navigate = useNavigate();
@@ -218,7 +218,7 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default AdminRegister;
 
 const Button = styled.button`
   margin-top: 20px;
