@@ -5,8 +5,12 @@ import { RxDashboard } from "react-icons/rx";
 import { BiSupport, BiLogOut, BiLineChart } from "react-icons/bi";
 import { MdNotifications, MdPeopleAlt } from "react-icons/md";
 import { TiMessages } from "react-icons/ti";
+import { UseAppDispatch } from "../../Global/Store";
+import { logoutAdmin } from "../../Global/ReduxState";
 
 const AdminDashboardHeader = () => {
+  const dispatch = UseAppDispatch();
+
   return (
     <div>
       <Container>
@@ -37,7 +41,11 @@ const AdminDashboardHeader = () => {
             </Navigation>
           </LogoNav>
 
-          <LogOut>
+          <LogOut
+            onClick={() => {
+              dispatch(logoutAdmin());
+            }}
+          >
             <BiLogOut style={{ fontSize: "20px" }} />
             logout
           </LogOut>
