@@ -11,9 +11,9 @@ const MakePayment = () => {
 
   const config = {
     reference: new Date().getTime().toString(),
-    email,
+    email: "isaacetor@g.com",
     amount,
-    publicKey: "pk_test_d632bf4b9aa1e74745eb158cec8034961dc13b18",
+    publicKey: "pk_test_602d7f18b319ff579007ec297f03f2fb139ce402",
   };
 
   const onSuccess: any = (reference: string) => {
