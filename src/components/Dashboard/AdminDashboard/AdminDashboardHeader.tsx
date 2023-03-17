@@ -51,11 +51,28 @@ const AdminDashboardHeader = () => {
           </LogOut>
         </Wrapper>
       </Container>
+
+      <Mobile></Mobile>
     </div>
   );
 };
 
 export default AdminDashboardHeader;
+
+const Mobile = styled.div`
+  width: 90%;
+  height: 10vh;
+  position: absolute;
+  margin: auto;
+  bottom: 10px;
+  border-radius: 20px;
+  background-color: #1d1d41;
+  display: none;
+
+  @media screen and (max-width: 768px) {
+    display: block;
+  }
+`;
 
 const LogoNav = styled.div``;
 
@@ -124,4 +141,8 @@ const Container = styled.div`
   align-items: center;
   position: fixed;
   overflow: hidden;
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
 `;
