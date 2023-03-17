@@ -2,7 +2,7 @@ import axios from "axios";
 import { userData } from "../AllInterface/AllInterface";
 
 const localURL: string = "http://localhost:8000/api/clientauth";
-// const liveURI = "https://serversideoncwm.onrender.com/"
+const liveURI = "https://cwmendpoint-server.onrender.com/api/clientauth";
 
 export interface login {
   email: string;
@@ -17,7 +17,7 @@ export const createClient = async ({
   address,
 }: userData) => {
   return await axios
-    .post(`${localURL}/clientregister`, {
+    .post(`${liveURI}/clientregister`, {
       name,
       email,
       password,
@@ -29,7 +29,7 @@ export const createClient = async ({
 
 export const loginClient = async ({ email, password }: login) => {
   return await axios
-    .post(`${localURL}/clientlogin`, { email, password })
+    .post(`${liveURI}/clientlogin`, { email, password })
     .then((res) => res.data);
   // .catch((err) => console.log(`this is api consumption error`, err));
 };
