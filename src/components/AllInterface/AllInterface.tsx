@@ -5,3 +5,9 @@ export interface userData {
   phoneNumber: number;
   address: string;
 }
+
+export interface adminData {
+  name: string;
+  email: string;
+  password: string;
+}

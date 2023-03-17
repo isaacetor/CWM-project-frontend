@@ -15,7 +15,8 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
 import { UseAppDispatch } from "../Global/Store";
 import { useNavigate } from "react-router-dom";
-import { registerClient } from "../Global/ReduxState";
+import { registerAdmin, registerClient } from "../Global/ReduxState";
+import { createAdmin } from "../Api/adminApi";
 
 const AdminRegister = () => {
   const dispatch = UseAppDispatch();
@@ -27,8 +28,6 @@ const AdminRegister = () => {
       name: yup.string().required("please enter a name"),
       email: yup.string().required("please enter a email"),
       password: yup.string().required("please enter a password"),
-      phoneNumber: yup.number().required("please enter a phone number"),
-      address: yup.string().required("please enter a address"),
     })
     .required();
   type formData = yup.InferType<typeof userSchema>;
@@ -43,12 +42,12 @@ const AdminRegister = () => {
   });
 
   const newClient = useMutation({
-    mutationFn: (data: any) => createClient(data),
-    mutationKey: ["registerClients"],
+    mutationFn: (data: any) => createAdmin(data),
+    mutationKey: ["registerAdmin"],
 
     onSuccess: (data: any) => {
       console.log("my data", data);
-      dispatch(registerClient(data.data));
+      dispatch(registerAdmin(data.data));
     },
   });
   const submit = handleSubmit((data) => {
@@ -113,29 +112,8 @@ const AdminRegister = () => {
                     placeholder="email"
                   />
                   <p>{errors?.email && errors?.email?.message} </p>
-                  <span>{errors?.address && errors?.address?.message}</span>
                 </InputHold>
-                <InputHold>
-                  <input
-                    {...register("phoneNumber")}
-                    type="number"
-                    required
-                    placeholder="Phone Number"
-                    maxLength={11}
-                  />
-                  <span>
-                    {errors?.phoneNumber && errors?.phoneNumber?.message}
-                  </span>
-                </InputHold>
-                <InputHold>
-                  <input
-                    {...register("address")}
-                    type="text"
-                    required
-                    placeholder="enter address"
-                  />
-                  <span>{errors?.address && errors?.address?.message}</span>
-                </InputHold>
+
                 {/* <InputHold2>
                   <p style={{ marginBottom: "5px" }}>Select clientType</p>
                   <div style={{ display: "flex" }}>
