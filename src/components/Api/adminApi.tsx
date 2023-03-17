@@ -3,9 +3,10 @@ import { adminData } from "../AllInterface/AllInterface";
 
 const localURL: string = "http://localhost:8000/api/adminauth";
 // const liveURI = "https://serversideoncwm.onrender.com/"
-const liveURI = "https://cwmendpoint-server.onrender.com/api/adminauth";
+export const liveURI = "https://cwmendpoint-server.onrender.com/api/adminauth";
 
-const liveURI2 = "https://cwmendpoint-server.onrender.com/api/admindasboard";
+export const liveURI2 =
+  "https://cwmendpoint-server.onrender.com/api/admindasboard";
 
 export interface login {
   email: string;
