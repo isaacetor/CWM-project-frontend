@@ -36,7 +36,7 @@ const Adminmessage = () => {
 
       .then((res) => {
         Swal.fire({
-          title: "succeful",
+          title: "successful",
           icon: "success",
         });
       })
