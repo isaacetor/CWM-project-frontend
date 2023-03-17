@@ -111,7 +111,8 @@ const Title = styled.div`
 const Second = styled.div`
   width: 80%;
   background-color: #fff;
-  box-shadow: rgba(0, 0, 0, 0.122) 0px 1px 4px;
+  box-shadow: rgba(0, 0, 0, 0.027) 1.95px 1.95px 2.6px;
+  border-radius: 20px;
   margin-top: 30px;
   padding: 40px;
 `;

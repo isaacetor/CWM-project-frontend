@@ -1,18 +1,25 @@
 import React from "react";
+import { BsPerson } from "react-icons/bs";
 import styled from "styled-components";
-import AdminDashboardSidebar from "./AdminDashboardSidebar";
+import AdminDashboardSidebar from "../AdminDashboardSidebar";
 
-const AdminDashboardHome = () => {
+const AllUsers = () => {
   return (
     <div>
       <Container>
         <Wrapper>
-          <Text>Welcome Back , Favour 👋</Text>
+          {/* title */}
+          <Text>
+            View All Clients <BsPerson style={{ fontSize: "25px" }} />
+          </Text>
+
           <Main>
             <First>
+              {/* where to select users by location */}
               <Income></Income>
-              <Analytic></Analytic>
-              <Transaction></Transaction>
+
+              {/* where to see all the users in selected location */}
+              <Analytics></Analytics>
             </First>
             {/* sidebar */}
             <AdminDashboardSidebar />
@@ -23,18 +30,11 @@ const AdminDashboardHome = () => {
   );
 };
 
-export default AdminDashboardHome;
+export default AllUsers;
 
-const Transaction = styled.div`
+const Analytics = styled.div`
   width: 100%;
-  height: 45vh;
-  background-color: #1d1d41;
-  border-radius: 20px;
-`;
-
-const Analytic = styled.div`
-  width: 100%;
-  height: 45vh;
+  height: 90vh;
   background-color: #1d1d41;
   margin-bottom: 20px;
   border-radius: 20px;
@@ -43,7 +43,7 @@ const Analytic = styled.div`
 const Income = styled.div`
   width: 100%;
   height: 20vh;
-  background-color: #49e307;
+  background-color: #ea06ee;
   margin-bottom: 20px;
 `;
 
@@ -66,6 +66,9 @@ const Text = styled.div`
   margin-bottom: 10px;
   margin-top: 20px;
   margin-left: 15px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 `;
 
 const Wrapper = styled.div`

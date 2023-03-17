@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import TransactionHistory from "../TransactionHistory";
 import UserDashboardSidebar from "../UserDashboardSidebar";
 
 const MakePayment = () => {
@@ -23,6 +24,8 @@ const MakePayment = () => {
                   </FundsHold>
                 </MoneyHolder>
               </Details>
+
+              <TransactionHistory />
             </First>
             <Second>
               <UserDashboardSidebar />
@@ -60,21 +63,22 @@ const FundsHold = styled.div`
   h1 {
     margin: 0;
     font-weight: 500;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
   }
 `;
 
 const Details = styled.div`
-  width: 93%;
+  width: 91%;
   background-color: #fff;
-  box-shadow: rgba(0, 0, 0, 0.122) 0px 1px 4px;
-  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.027) 1.95px 1.95px 2.6px;
+  border-radius: 10px;
   padding: 20px;
   gap: 50px;
 
   h2 {
     margin: 0;
     font-weight: 600;
+    font-size: 16px;
   }
 `;
 

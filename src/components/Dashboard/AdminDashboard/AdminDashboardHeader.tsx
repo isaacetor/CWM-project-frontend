@@ -2,9 +2,9 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { RxDashboard } from "react-icons/rx";
-import { BiSupport, BiLogOut } from "react-icons/bi";
-import { BsPerson, BsWallet2 } from "react-icons/bs";
-import { RiBillLine } from "react-icons/ri";
+import { BiSupport, BiLogOut, BiLineChart } from "react-icons/bi";
+import { MdNotifications, MdPeopleAlt } from "react-icons/md";
+import { TiMessages } from "react-icons/ti";
 
 const AdminDashboardHeader = () => {
   return (
@@ -19,20 +19,20 @@ const AdminDashboardHeader = () => {
               <Nav to="/">
                 <RxDashboard style={{ fontSize: "20px" }} /> Dashboard
               </Nav>
-              <Nav to="/invoices">
-                <RiBillLine style={{ fontSize: "20px" }} /> View Bill
+              <Nav to="/notifications">
+                <MdNotifications style={{ fontSize: "20px" }} /> Notifications
               </Nav>
-              <Nav to="/makepayment">
-                <BsWallet2 style={{ fontSize: "20px" }} />
-                Make Payment
+              <Nav to="/analytics">
+                <BiLineChart style={{ fontSize: "20px" }} />
+                Analytics
               </Nav>
-              <Nav to="/contact">
-                <BiSupport style={{ fontSize: "20px" }} />
-                Customer Support
+              <Nav to="/send-message">
+                <TiMessages style={{ fontSize: "20px" }} />
+                Send Message
               </Nav>
-              <Nav to="/profile">
-                <BsPerson style={{ fontSize: "20px" }} />
-                Profile
+              <Nav to="/users">
+                <MdPeopleAlt style={{ fontSize: "20px" }} />
+                View Users
               </Nav>
             </Navigation>
           </LogoNav>
@@ -110,7 +110,7 @@ const Wrapper = styled.div`
 const Container = styled.div`
   width: 270px;
   height: 100vh;
-  background-color: #03001c;
+  background-color: #1d1d41;
   display: flex;
   justify-content: center;
   align-items: center;

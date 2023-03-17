@@ -1,17 +1,17 @@
 import React from "react";
 import styled from "styled-components";
-import AdminDashboardSidebar from "./AdminDashboardSidebar";
+import AdminDashboardSidebar from "../AdminDashboardSidebar";
 
-const AdminDashboardHome = () => {
+const Analytic = () => {
   return (
     <div>
       <Container>
         <Wrapper>
-          <Text>Welcome Back , Favour 👋</Text>
+          <Text>See Data Statistics</Text>
           <Main>
             <First>
               <Income></Income>
-              <Analytic></Analytic>
+              <Analytics></Analytics>
               <Transaction></Transaction>
             </First>
             {/* sidebar */}
@@ -23,7 +23,7 @@ const AdminDashboardHome = () => {
   );
 };
 
-export default AdminDashboardHome;
+export default Analytic;
 
 const Transaction = styled.div`
   width: 100%;
@@ -32,7 +32,7 @@ const Transaction = styled.div`
   border-radius: 20px;
 `;
 
-const Analytic = styled.div`
+const Analytics = styled.div`
   width: 100%;
   height: 45vh;
   background-color: #1d1d41;
@@ -43,7 +43,7 @@ const Analytic = styled.div`
 const Income = styled.div`
   width: 100%;
   height: 20vh;
-  background-color: #49e307;
+  background-color: #3a0080;
   margin-bottom: 20px;
 `;
 
