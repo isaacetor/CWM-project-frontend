@@ -9,12 +9,13 @@ import { NavLink, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import Swal from "sweetalert2";
 import * as yup from "yup";
-import { loginClients } from "../Global/ReduxState";
+import { loginAllAdmin, loginClients } from "../Global/ReduxState";
 import { loginClient } from "../Api/Endpoints";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { UseAppDispatch } from "../Global/Store";
 import { useForm } from "react-hook-form";
+import { loginAdmin } from "../Api/adminApi";
 
 const AdminLogin = () => {
   const dispatch = UseAppDispatch();
@@ -40,15 +41,15 @@ const AdminLogin = () => {
   });
 
   const signin = useMutation({
-    mutationFn: loginClient,
-    mutationKey: ["loginAllClients"],
+    mutationFn: loginAdmin,
+    mutationKey: ["loginAllAdmin"],
 
     // onSuccess: (data) => {
     //   client.invalidateQueries(["socialMediaPost"]);
     // },
 
     onSuccess: (myData) => {
-      console.log("this is on success", dispatch(loginClients(myData.data)));
+      console.log("this is on success", dispatch(loginAllAdmin(myData.data)));
     },
   });
 
