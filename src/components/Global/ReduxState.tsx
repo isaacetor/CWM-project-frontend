@@ -7,13 +7,20 @@ interface loginClient {
   password: string;
 }
 
+interface adminData {
+  name: string;
+  email: string;
+  password: string;
+}
+
 const initialState = {
   Client: {} as userData | null,
   login: {} as loginClient | null,
+  Admin: {} as adminData | null,
 };
 
 const ReduxState = createSlice({
-  name: "CWM",
+  name: "E_Waste",
   initialState,
   reducers: {
     registerClient: (state, { payload }: PayloadAction<userData>) => {
@@ -21,6 +28,9 @@ const ReduxState = createSlice({
     },
     loginClients: (state, { payload }: PayloadAction<loginClient>) => {
       state.login = payload;
+    },
+    registerAdmin: (state, { payload }: PayloadAction<adminData>) => {
+      state.Admin = payload;
     },
   },
 });
