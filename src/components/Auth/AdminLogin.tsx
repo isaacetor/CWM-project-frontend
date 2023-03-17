@@ -55,7 +55,7 @@ const AdminLogin = () => {
 
   const submit = handleSubmit((data) => {
     signin.mutate(data);
-    // console.log(`this is yup signin`, data);
+    console.log(`this is yup signin`, data);
     reset();
     Swal.fire({
       title: "login",
@@ -64,7 +64,7 @@ const AdminLogin = () => {
       timerProgressBar: true,
 
       willClose: () => {
-        navigate("/userdashboard");
+        navigate("/admin/dashboard");
       },
     });
   });
@@ -133,7 +133,7 @@ const AdminLogin = () => {
                 <span style={{ marginTop: "8px", marginBottom: "10px" }}>
                   Dont have an account?
                   <NavLink
-                    to="/register"
+                    to="/admin/register"
                     style={{
                       marginLeft: "5px",
                       textDecoration: "none",

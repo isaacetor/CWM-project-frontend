@@ -1,8 +1,8 @@
 import React from "react";
 import { useNavigate, useRoutes } from "react-router-dom";
 import styled from "styled-components";
-import AdminLogin from "../AdminAuth/AdminLogin";
-
+import AdminLogin from "../Auth/AdminLogin";
+import AdminRegister from "../Auth/AdminRegister";
 import Analytic from "../Dashboard/AdminDashboard/AdminAnalytic/Analytic";
 import AdminDashboardHeader from "../Dashboard/AdminDashboard/AdminDashboardHeader";
 import AdminDashboardHome from "../Dashboard/AdminDashboard/AdminDashboardHome";
@@ -18,6 +18,10 @@ const AdminDashboardRoutes = () => {
     {
       path: "/admin",
       element: <AdminLogin />,
+    },
+    {
+      path: "/admin/register",
+      element: <AdminRegister />,
     },
     {
       path: "/admin/dashboard",

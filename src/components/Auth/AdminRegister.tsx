@@ -61,7 +61,7 @@ const AdminRegister = () => {
       timerProgressBar: true,
 
       willClose: () => {
-        navigate("/userdashoard");
+        navigate("/admin/dashboard");
       },
     });
   });
@@ -177,7 +177,7 @@ const AdminRegister = () => {
                 <span style={{ marginTop: "8px", marginBottom: "10px" }}>
                   Already have have an account?
                   <NavLink
-                    to="/signin"
+                    to="/admin"
                     style={{
                       marginLeft: "5px",
                       textDecoration: "none",
