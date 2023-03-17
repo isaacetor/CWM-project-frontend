@@ -1,17 +1,30 @@
 import React from "react";
 import styled from "styled-components";
 
+<<<<<<< HEAD
 const AdminSidebar = () => {
   return (
     <div>
       <SideBar></SideBar>
+=======
+const AdminDashboardSidebar = () => {
+  return (
+    <div>
+      <Container></Container>
+>>>>>>> 4500de0d74a5835be2daaa90b6e90992deea08d1
     </div>
   );
 };
 
+<<<<<<< HEAD
 export default AdminSidebar;
 
 const SideBar = styled.div`
+=======
+export default AdminDashboardSidebar;
+
+const Container = styled.div`
+>>>>>>> 4500de0d74a5835be2daaa90b6e90992deea08d1
   width: 23.3vw;
   height: 90vh;
   background-color: #fff;

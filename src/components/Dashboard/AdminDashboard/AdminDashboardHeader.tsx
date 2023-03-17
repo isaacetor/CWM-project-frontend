@@ -1,12 +1,21 @@
 import React from "react";
+<<<<<<< HEAD
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
+=======
+import { NavLink } from "react-router-dom";
+import styled from "styled-components";
+>>>>>>> 4500de0d74a5835be2daaa90b6e90992deea08d1
 import { RxDashboard } from "react-icons/rx";
 import { BiSupport, BiLogOut, BiLineChart } from "react-icons/bi";
 import { MdNotifications, MdPeopleAlt } from "react-icons/md";
 import { TiMessages } from "react-icons/ti";
 
+<<<<<<< HEAD
 const AdminHeader = () => {
+=======
+const AdminDashboardHeader = () => {
+>>>>>>> 4500de0d74a5835be2daaa90b6e90992deea08d1
   return (
     <div>
       <Container>
@@ -47,7 +56,11 @@ const AdminHeader = () => {
   );
 };
 
+<<<<<<< HEAD
 export default AdminHeader;
+=======
+export default AdminDashboardHeader;
+>>>>>>> 4500de0d74a5835be2daaa90b6e90992deea08d1
 
 const LogoNav = styled.div``;
 

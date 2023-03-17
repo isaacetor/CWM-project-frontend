@@ -1,24 +1,21 @@
 import React from "react";
-import UserDashboardSidebar from "./UserDashboardSidebar";
 import styled from "styled-components";
+import AdminDashboardSidebar from "../AdminDashboardSidebar";
 
-import TransactionHistory from "./TransactionHistory";
-import UserNotification from "./UserNotification";
-
-const UserDashboardHome = () => {
+const Analytic = () => {
   return (
     <div>
       <Container>
         <Wrapper>
-          <Text>Welcome Back , Esther 👋</Text>
+          <Text>See Data Statistics</Text>
           <Main>
             <First>
-              <UserNotification />
-              <TransactionHistory />
+              <Income></Income>
+              <Analytics></Analytics>
+              <Transaction></Transaction>
             </First>
-            <Second>
-              <UserDashboardSidebar />
-            </Second>
+            {/* sidebar */}
+            <AdminDashboardSidebar />
           </Main>
         </Wrapper>
       </Container>
@@ -26,33 +23,44 @@ const UserDashboardHome = () => {
   );
 };
 
-export default UserDashboardHome;
+export default Analytic;
 
-const Second = styled.div`
-  width: 35%;
-  height: 100%;
+const Transaction = styled.div`
+  width: 100%;
+  height: 45vh;
+  background-color: #1d1d41;
+  border-radius: 20px;
+`;
+
+const Analytics = styled.div`
+  width: 100%;
+  height: 45vh;
+  background-color: #1d1d41;
+  margin-bottom: 20px;
+  border-radius: 20px;
+`;
+
+const Income = styled.div`
+  width: 100%;
+  height: 20vh;
+  background-color: #3a0080;
+  margin-bottom: 20px;
 `;
 
 const First = styled.div`
   width: 70%;
-  height: 100%;
-
-  display: flex;
-  /* justify-content: space-between; */
-  flex-direction: column;
 `;
 
 const Main = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-between;
+  gap: 25px;
 `;
 
 const Text = styled.div`
   width: 100%;
-  /* height: 10%; */
-  /* background-color: blue; */
-  color: #1d1d41;
+  color: #fff;
   font-weight: 600;
   font-size: 22px;
   margin-bottom: 10px;
@@ -62,9 +70,6 @@ const Text = styled.div`
 
 const Wrapper = styled.div`
   width: 95%;
-  /* height: 95%; */
-  /* background: brown; */
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -73,9 +78,8 @@ const Wrapper = styled.div`
 
 const Container = styled.div`
   width: calc(100vw - 270px);
-  /* height: 100vh; */
+  background-color: #141332;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #ecf2ff92;
 `;

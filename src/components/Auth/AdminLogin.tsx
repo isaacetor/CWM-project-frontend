@@ -9,14 +9,15 @@ import { NavLink, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import Swal from "sweetalert2";
 import * as yup from "yup";
-import { registerClient } from "../Global/ReduxState";
+import { registerAdmin } from "../Global/ReduxState";
 import { loginClient } from "../Api/Endpoints";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { UseAppDispatch } from "../Global/Store";
 import { useForm } from "react-hook-form";
+import { loginAdmin } from "../Api/adminApi";
 
-const SignIn = () => {
+const AdminLogin = () => {
   const dispatch = UseAppDispatch();
   const client = useQueryClient();
   const navigate = useNavigate();
@@ -40,22 +41,21 @@ const SignIn = () => {
   });
 
   const signin = useMutation({
-    mutationFn: loginClient,
-    mutationKey: ["loginAllClients"],
+    mutationFn: loginAdmin,
+    mutationKey: ["loginAllAdmin"],
 
     // onSuccess: (data) => {
     //   client.invalidateQueries(["socialMediaPost"]);
     // },
 
     onSuccess: (myData) => {
-      console.log(myData);
-      console.log("this is on success", dispatch(registerClient(myData.data)));
+      console.log("this is on success", dispatch(registerAdmin(myData.data)));
     },
   });
 
   const submit = handleSubmit((data) => {
     signin.mutate(data);
-    console.log(`this is yup signin`, data);
+    // console.log(`this is yup signin`, data);
     reset();
     Swal.fire({
       title: "login",
@@ -152,7 +152,7 @@ const SignIn = () => {
   );
 };
 
-export default SignIn;
+export default AdminLogin;
 
 const Button = styled.button`
   margin-top: 20px;

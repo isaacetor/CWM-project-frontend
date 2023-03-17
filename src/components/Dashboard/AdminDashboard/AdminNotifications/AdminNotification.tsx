@@ -1,24 +1,18 @@
 import React from "react";
-import UserDashboardSidebar from "./UserDashboardSidebar";
 import styled from "styled-components";
+import AdminDashboardSidebar from "../AdminDashboardSidebar";
 
-import TransactionHistory from "./TransactionHistory";
-import UserNotification from "./UserNotification";
-
-const UserDashboardHome = () => {
+const AdminNotification = () => {
   return (
     <div>
       <Container>
         <Wrapper>
-          <Text>Welcome Back , Esther 👋</Text>
+          <Text>Your Notifications</Text>
           <Main>
             <First>
-              <UserNotification />
-              <TransactionHistory />
+              <Transaction></Transaction>
             </First>
-            <Second>
-              <UserDashboardSidebar />
-            </Second>
+            <AdminDashboardSidebar />
           </Main>
         </Wrapper>
       </Container>
@@ -26,33 +20,33 @@ const UserDashboardHome = () => {
   );
 };
 
-export default UserDashboardHome;
+export default AdminNotification;
 
-const Second = styled.div`
-  width: 35%;
-  height: 100%;
+const Transaction = styled.div`
+  width: 100%;
+  height: 100vh;
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+    rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  margin-top: 20px;
 `;
 
 const First = styled.div`
   width: 70%;
-  height: 100%;
-
-  display: flex;
-  /* justify-content: space-between; */
-  flex-direction: column;
 `;
 
 const Main = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-between;
+  gap: 25px;
 `;
 
 const Text = styled.div`
   width: 100%;
-  /* height: 10%; */
-  /* background-color: blue; */
-  color: #1d1d41;
+  color: #1d1d1d;
   font-weight: 600;
   font-size: 22px;
   margin-bottom: 10px;
@@ -62,9 +56,6 @@ const Text = styled.div`
 
 const Wrapper = styled.div`
   width: 95%;
-  /* height: 95%; */
-  /* background: brown; */
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -73,9 +64,8 @@ const Wrapper = styled.div`
 
 const Container = styled.div`
   width: calc(100vw - 270px);
-  /* height: 100vh; */
+  background-color: #f6f8fc9e;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #ecf2ff92;
 `;
