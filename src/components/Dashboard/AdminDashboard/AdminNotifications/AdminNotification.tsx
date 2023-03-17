@@ -46,7 +46,6 @@ const Main = styled.div`
 
 const Text = styled.div`
   width: 100%;
-  color: #1d1d1d;
   font-weight: 600;
   font-size: 22px;
   margin-bottom: 10px;
@@ -64,8 +63,9 @@ const Wrapper = styled.div`
 
 const Container = styled.div`
   width: calc(100vw - 270px);
-  background-color: #f6f8fc9e;
+  background-color: #141332;
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #fff;
 `;

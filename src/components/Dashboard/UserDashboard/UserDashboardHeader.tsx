@@ -5,8 +5,14 @@ import { BsPerson, BsWallet2 } from "react-icons/bs";
 import { RiBillLine } from "react-icons/ri";
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
+import { UseAppDispatch } from "../../Global/Store";
+import { useNavigate } from "react-router-dom";
+import { logOut } from "../../Global/ReduxState";
 
 const UserDashboardHeader = () => {
+  const dispatch = UseAppDispatch();
+  const navigate = useNavigate();
+
   return (
     <div>
       <Container>
@@ -37,7 +43,12 @@ const UserDashboardHeader = () => {
             </Navigation>
           </LogoNav>
 
-          <LogOut>
+          <LogOut
+            onClick={() => {
+              dispatch(logOut());
+              navigate("/");
+            }}
+          >
             <BiLogOut style={{ fontSize: "20px" }} />
             logout
           </LogOut>
