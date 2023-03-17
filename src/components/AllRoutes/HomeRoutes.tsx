@@ -14,7 +14,7 @@ const HomeRoutes = () => {
     if (selector?.name) {
       navigate("/signin");
     }
-  });
+  }, []);
 
   const element = useRoutes([
     {
