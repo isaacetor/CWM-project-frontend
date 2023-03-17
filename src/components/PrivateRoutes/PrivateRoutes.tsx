@@ -5,6 +5,7 @@ import { UseAppSelector } from "../Global/Store";
 const PrivateRoutes = ({ children }: any) => {
   const selector = UseAppSelector((state) => state.Client);
   const adminSelector = UseAppSelector((state) => state.Admin);
+
   if (selector?.name) {
     return children;
   } else {
