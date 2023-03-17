@@ -1,13 +1,26 @@
+import { useQuery } from "@tanstack/react-query";
 import React from "react";
 import styled from "styled-components";
+import { getOneAdmin } from "../../Api/adminApi";
+import { UseAppSelector } from "../../Global/Store";
 import AdminDashboardSidebar from "./AdminDashboardSidebar";
 
 const AdminDashboardHome = () => {
+  const admin = UseAppSelector((state) => state.Admin);
+
+  console.log(admin);
+
+  const fetchUser = useQuery({
+    queryKey: ["Admins"],
+    queryFn: () => getOneAdmin(admin?._id),
+  });
+
+  console.log(fetchUser);
   return (
     <div>
       <Container>
         <Wrapper>
-          <Text>Welcome Back , admin 👋</Text>
+          <Text>Welcome Back , {admin?.name?.toUpperCase()} 👋</Text>
           <Main>
             <First>
               <Income>

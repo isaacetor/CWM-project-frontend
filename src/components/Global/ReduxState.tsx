@@ -15,6 +15,7 @@ interface adminData {
   name: string;
   email: string;
   password: string;
+  _id: string;
 }
 
 const initialState = {
