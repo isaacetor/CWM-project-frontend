@@ -32,7 +32,7 @@ const HomeRoutes = () => {
   ]);
   return (
     <div>
-      {selector?.name ? null : <Header />}
+      {/* {selector?.name ? null : <Header />} */}
 
       {element}
     </div>
