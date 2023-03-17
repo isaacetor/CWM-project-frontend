@@ -17,7 +17,7 @@ import {
 } from "redux-persist";
 
 const persistConfig = {
-  key: "eWaste",
+  key: "MyE_Waste",
   version: 1,
   storage,
 };
