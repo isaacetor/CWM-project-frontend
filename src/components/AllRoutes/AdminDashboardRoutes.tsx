@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useNavigate, useRoutes } from "react-router-dom";
 import styled from "styled-components";
 import AdminLogin from "../Auth/AdminLogin";
@@ -12,8 +12,19 @@ import AllUsers from "../Dashboard/AdminDashboard/AllUsers/AllUsers";
 import MessageAdmin from "../Dashboard/UserDashboard/MessageAdmin/MessageAdmin";
 import UserNotification from "../Dashboard/UserDashboard/UserNotification";
 import Notification from "../Dashboard/UserDashboard/WasteBill/Notification";
+import { UseAppSelector } from "../Global/Store";
 
 const AdminDashboardRoutes = () => {
+  const navigate = useNavigate();
+
+  const adminSelector = UseAppSelector((state) => state.Admin);
+
+  useEffect(() => {
+    if (adminSelector?.name) {
+      navigate("/admin/dashboard");
+    }
+  }, []);
+
   const element = useRoutes([
     {
       path: "/admin",
