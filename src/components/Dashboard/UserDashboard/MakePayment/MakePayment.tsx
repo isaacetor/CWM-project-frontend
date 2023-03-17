@@ -10,7 +10,19 @@ const MakePayment = () => {
           <Text>Payments</Text>
           <Main>
             <First>
-              <Details></Details>
+              <Details>
+                <h2>Balance</h2>
+                <MoneyHolder>
+                  <FundsHold>
+                    <h4>Arrears</h4>
+                    <h1>₦20000</h1>
+                  </FundsHold>
+                  <FundsHold>
+                    <h4>current payment</h4>
+                    <h1>₦20000</h1>
+                  </FundsHold>
+                </MoneyHolder>
+              </Details>
             </First>
             <Second>
               <UserDashboardSidebar />
@@ -24,11 +36,46 @@ const MakePayment = () => {
 
 export default MakePayment;
 
+const MoneyHolder = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  gap: 40px;
+`;
+
+const FundsHold = styled.div`
+  width: 300px;
+  /* height: 16vh; */
+  /* background-color: #ecf2ff80; */
+  margin-top: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+  h4 {
+    font-weight: 500;
+    margin: 0;
+    text-transform: capitalize;
+    opacity: 0.5;
+  }
+
+  h1 {
+    margin: 0;
+    font-weight: 500;
+    font-size: 1.5rem;
+  }
+`;
+
 const Details = styled.div`
-  width: 96%;
-  height: 30vh;
+  width: 93%;
   background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.122) 0px 1px 4px;
   border-radius: 20px;
+  padding: 20px;
+  gap: 50px;
+
+  h2 {
+    margin: 0;
+    font-weight: 600;
+  }
 `;
 
 const Second = styled.div`
@@ -78,4 +125,5 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   background-color: #ecf2ff92;
+  color: #03001c;
 `;
