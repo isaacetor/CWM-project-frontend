@@ -16,7 +16,7 @@ const AdminDashboardHeader = () => {
               <h1>Continental</h1>
             </Logo>
             <Navigation>
-              <Nav to="/">
+              <Nav to="/admin">
                 <RxDashboard style={{ fontSize: "20px" }} /> Dashboard
               </Nav>
               <Nav to="/notifications">

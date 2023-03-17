@@ -12,7 +12,7 @@ const HomeRoutes = () => {
 
   useEffect(() => {
     if (selector?.name) {
-      navigate("");
+      navigate("/userdashboard");
     }
   });
 
@@ -32,7 +32,7 @@ const HomeRoutes = () => {
   ]);
   return (
     <div>
-      {/* <Header /> */}
+      {/* {selector?.name ? null : <Header />} */}
       {element}
     </div>
   );
