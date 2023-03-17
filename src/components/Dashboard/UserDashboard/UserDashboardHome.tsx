@@ -4,13 +4,27 @@ import styled from "styled-components";
 
 import TransactionHistory from "./TransactionHistory";
 import UserNotification from "./UserNotification";
+import { UseAppSelector } from "../../Global/Store";
+import { useQuery } from "@tanstack/react-query";
+import { getOneClient } from "../../Api/Endpoints";
 
 const UserDashboardHome = () => {
+  const user = UseAppSelector((state) => state.Client);
+
+  console.log(user);
+
+  const fetchUser = useQuery({
+    queryKey: ["Clients"],
+    queryFn: () => getOneClient(user?._id),
+  });
+
+  console.log(fetchUser);
+
   return (
     <div>
       <Container>
         <Wrapper>
-          <Text>Welcome Back , Esther 👋</Text>
+          <Text>Welcome Back , {user?.name?.toUpperCase()} 👋</Text>
           <Main>
             <First>
               <UserNotification />

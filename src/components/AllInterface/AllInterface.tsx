@@ -4,6 +4,7 @@ export interface userData {
   password: string;
   phoneNumber: number;
   address: string;
+  _id: string;
 }
 
 export interface adminData {
