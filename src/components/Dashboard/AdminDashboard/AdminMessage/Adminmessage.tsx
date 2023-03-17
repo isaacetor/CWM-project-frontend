@@ -16,7 +16,11 @@ const Adminmessage = () => {
           <Main>
             <First>
               {/* where to create message form field */}
-              <Analytics></Analytics>
+              <Analytics>
+                <input />
+                <textarea />
+                <button>Send Broadcast</button>
+              </Analytics>
             </First>
             {/* sidebar */}
             <AdminDashboardSidebar />
@@ -36,6 +40,8 @@ const Analytics = styled.div`
   margin-bottom: 20px;
   margin-top: 20px;
   border-radius: 20px;
+  display: flex;
+  flex-direction: column;
 `;
 
 const Income = styled.div`
