@@ -11,8 +11,9 @@ function App() {
       <PrivateRoutes>
         <UserDashBoardRoutes />
       </PrivateRoutes>
-
-      <AdminDashboardRoutes />
+      <PrivateRoutes>
+        <AdminDashboardRoutes />
+      </PrivateRoutes>
     </div>
   );
 }

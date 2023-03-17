@@ -14,7 +14,7 @@ const PrivateRoutes = ({ children }: any) => {
   if (adminSelector?.name) {
     return children;
   } else {
-    <Navigate to="/" replace></Navigate>;
+    <Navigate to="/admin/dashboard" replace></Navigate>;
   }
 };
 
