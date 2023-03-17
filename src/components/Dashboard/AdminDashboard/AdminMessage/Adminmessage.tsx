@@ -2,8 +2,53 @@ import React, { useState } from "react";
 import { BsPerson } from "react-icons/bs";
 import styled from "styled-components";
 import AdminDashboardSidebar from "../AdminDashboardSidebar";
+import { liveURI2, sendMsg } from "../../../Api/adminApi";
+import { useMutation } from "@tanstack/react-query";
+import { UseAppSelector } from "../../../Global/Store";
+import axios from "axios";
+import Swal from "sweetalert2";
+import * as yup from "yup";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { useForm } from "react-hook-form";
 
 const Adminmessage = () => {
+  const schema = yup
+    .object({
+      desc: yup.string().required("field must be filled"),
+    })
+    .required();
+  type formData = yup.InferType<typeof schema>;
+  const {
+    handleSubmit,
+    formState: { errors },
+    reset,
+    register,
+  } = useForm<formData>({
+    resolver: yupResolver(schema),
+  });
+
+  const adminID = UseAppSelector((state) => state.Admin);
+  const clientID = UseAppSelector((state) => state.Client);
+
+  const onSubmit = handleSubmit(async (data) => {
+    await axios
+      .post(`${liveURI2}/admintoclient/${adminID?._id}/${clientID?._id}`, data)
+      .then((res) => {
+        Swal.fire({
+          title: "succeful",
+          icon: "success",
+        });
+      })
+      .catch((err) => {
+        Swal.fire({
+          title: "an error occured",
+          icon: "error",
+          text: `${err.response?.data?.message}`,
+        });
+        console.log(err);
+      });
+  });
+
   const [showOne, setShowOne] = useState(true);
   const [showMany, setShowMany] = useState(false);
 
@@ -33,11 +78,15 @@ const Adminmessage = () => {
                   <Many onClick={showManyy}>Send Message to All Client?</Many>
                 </ButtonHold>
                 {showOne ? (
-                  <MessageOne>
-                    <input placeholder="Enter client email" />
-                    <input placeholder="Enter message title" />
+                  <MessageOne onSubmit={onSubmit}>
+                    {/* <input placeholder="Enter client email" /> */}
+                    <input
+                      placeholder="Enter message title"
+                      {...register("desc")}
+                    />
+                    <p>{errors?.desc?.message}</p>
                     <textarea />
-                    <button>Send message</button>
+                    <button type="submit">Send message</button>
                   </MessageOne>
                 ) : null}
                 {showMany ? (
@@ -123,7 +172,7 @@ const MessageMany = styled.div`
     width: 200px;
   }
 `;
-const MessageOne = styled.div`
+const MessageOne = styled.form`
   width: 100%;
   height: 60vh;
   margin-top: 40px;

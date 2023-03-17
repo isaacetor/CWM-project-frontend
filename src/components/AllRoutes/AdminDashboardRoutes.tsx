@@ -19,11 +19,11 @@ const AdminDashboardRoutes = () => {
 
   const adminSelector = UseAppSelector((state) => state.Admin);
 
-  useEffect(() => {
-    if (adminSelector?.name) {
-      navigate("/admin/dashboard");
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (adminSelector?.name) {
+  //     navigate("/admin/dashboard");
+  //   }
+  // }, []);
 
   const element = useRoutes([
     {
