@@ -33,12 +33,14 @@ const Adminmessage = () => {
   const onSubmit = handleSubmit(async (data) => {
     await axios
       .post(`${liveURI2}/admintoclient/${adminID?._id}/${clientID?._id}`, data)
+
       .then((res) => {
         Swal.fire({
           title: "succeful",
           icon: "success",
         });
       })
+
       .catch((err) => {
         Swal.fire({
           title: "an error occured",
@@ -46,6 +48,7 @@ const Adminmessage = () => {
           text: `${err.response?.data?.message}`,
         });
         console.log(err);
+        console.log(`these are the ids ${adminID?._id} and ${clientID?._id}`);
       });
   });
 

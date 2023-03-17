@@ -8,9 +8,9 @@ function App() {
   return (
     <div>
       <HomeRoutes />
-      <PrivateRoutes>
-        <UserDashBoardRoutes />
-      </PrivateRoutes>
+      {/* <PrivateRoutes> */}
+      <UserDashBoardRoutes />
+      {/* </PrivateRoutes> */}
       {/* <PrivateRoutes> */}
       <AdminDashboardRoutes />
       {/* </PrivateRoutes> */}
