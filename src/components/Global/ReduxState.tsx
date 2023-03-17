@@ -19,9 +19,7 @@ interface adminData {
 
 const initialState = {
   Client: {} as userData | null,
-  login: {} as loginClient | null,
   Admin: {} as adminData | null,
-  loginAdmin: {} as loginAdmin | null,
 };
 
 const ReduxState = createSlice({
@@ -31,19 +29,19 @@ const ReduxState = createSlice({
     registerClient: (state, { payload }: PayloadAction<userData>) => {
       state.Client = payload;
     },
-    loginClients: (state, { payload }: PayloadAction<loginClient>) => {
-      state.login = payload;
-    },
+
     registerAdmin: (state, { payload }: PayloadAction<adminData>) => {
       state.Admin = payload;
     },
-    loginAllAdmin: (state, { payload }: PayloadAction<loginAdmin>) => {
-      state.login = payload;
+    logOut: (state) => {
+      state.Client = null;
+    },
+    logoutAdmin: (state) => {
+      state.Admin = null;
     },
   },
 });
 
-export const { registerClient, loginClients, registerAdmin, loginAllAdmin } =
-  ReduxState.actions;
+export const { registerClient, registerAdmin } = ReduxState.actions;
 
 export default ReduxState.reducer;

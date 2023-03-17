@@ -28,3 +28,7 @@ export const loginAdmin = async ({ email, password }: login) => {
 };
 
 // ("http://localhost:8000/api/adminauth/adminlogin/");
+
+export const getOneAdmin = async (id: any) => {
+  return await axios.get(`${liveURI}/${id}`).then((res) => res.data);
+};
