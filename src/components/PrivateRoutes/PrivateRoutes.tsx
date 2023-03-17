@@ -8,7 +8,7 @@ const PrivateRoutes = ({ children }: any) => {
   if (selector?.name) {
     return children;
   } else {
-    <Navigate to="/" replace></Navigate>;
+    <Navigate to="/userdashboard" replace></Navigate>;
   }
 };
 

@@ -1,8 +1,15 @@
 import React from "react";
 import { useNavigate, useRoutes } from "react-router-dom";
 import styled from "styled-components";
+import Analytic from "../Dashboard/AdminDashboard/AdminAnalytic/Analytic";
 import AdminDashboardHeader from "../Dashboard/AdminDashboard/AdminDashboardHeader";
 import AdminDashboardHome from "../Dashboard/AdminDashboard/AdminDashboardHome";
+import Adminmessage from "../Dashboard/AdminDashboard/AdminMessage/Adminmessage";
+import AdminNotification from "../Dashboard/AdminDashboard/AdminNotifications/AdminNotification";
+import AllUsers from "../Dashboard/AdminDashboard/AllUsers/AllUsers";
+import MessageAdmin from "../Dashboard/UserDashboard/MessageAdmin/MessageAdmin";
+import UserNotification from "../Dashboard/UserDashboard/UserNotification";
+import Notification from "../Dashboard/UserDashboard/WasteBill/Notification";
 
 const AdminDashboardRoutes = () => {
   const element = useRoutes([
@@ -11,16 +18,20 @@ const AdminDashboardRoutes = () => {
       element: <AdminDashboardHome />,
     },
     {
-      path: "/analytic",
-      element: <AdminDashboardHome />,
+      path: "/analytics",
+      element: <Analytic />,
     },
     {
-      path: "/message",
-      element: <AdminDashboardHome />,
+      path: "/send-messag",
+      element: <Adminmessage />,
     },
     {
       path: "/notifications",
-      element: <AdminDashboardHome />,
+      element: <AdminNotification />,
+    },
+    {
+      path: "/users",
+      element: <AllUsers />,
     },
   ]);
 

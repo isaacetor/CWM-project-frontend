@@ -1,9 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import TransactionHistory from "../TransactionHistory";
 import UserDashboardSidebar from "../UserDashboardSidebar";
+import { usePaystackPayment } from "react-paystack";
 
 const MakePayment = () => {
+  const [email, setEmail] = useState("");
+  const [amount, setAmount] = useState(20000);
+  const [areas, setArears] = useState(10000);
+  const [total, setTotal] = useState<number>();
+
+  const config = {
+    reference: new Date().getTime().toString(),
+    email,
+    amount,
+    publicKey: "pk_test_d632bf4b9aa1e74745eb158cec8034961dc13b18",
+  };
+
+  const onSuccess: any = (reference: string) => {
+    console.log(reference);
+  };
+
+  const onClose = () => {
+    console.log("closed");
+  };
+
+  // const totalAmount = () => {
+  //   setTotal(areas + amount);
+  // };
+
+  const initializePayment = usePaystackPayment(config);
+
   return (
     <div>
       <Container>
@@ -16,13 +43,27 @@ const MakePayment = () => {
                 <MoneyHolder>
                   <FundsHold>
                     <h4>Arrears</h4>
-                    <h1>₦20000</h1>
+                    <h1>₦{areas}</h1>
                   </FundsHold>
                   <FundsHold>
                     <h4>current payment</h4>
-                    <h1>₦20000</h1>
+                    <h1>₦{amount}</h1>
+                  </FundsHold>
+                  <FundsHold>
+                    <h4>Total amount</h4>
+                    <h1>₦{amount + areas}</h1>
                   </FundsHold>
                 </MoneyHolder>
+                <Button>
+                  <button
+                    type="submit"
+                    onClick={() => {
+                      initializePayment(onSuccess, onClose);
+                    }}
+                  >
+                    Pay Now
+                  </button>
+                </Button>
               </Details>
 
               <TransactionHistory />
@@ -38,6 +79,28 @@ const MakePayment = () => {
 };
 
 export default MakePayment;
+
+const Button = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+
+  button {
+    padding: 15px 25px;
+    border: 0;
+    background-color: #ff731d;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+
+    :hover {
+      cursor: pointer;
+      opacity: 0.9;
+    }
+  }
+`;
 
 const MoneyHolder = styled.div`
   display: flex;
