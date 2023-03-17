@@ -9,7 +9,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import Swal from "sweetalert2";
 import * as yup from "yup";
-import { loginClients } from "../Global/ReduxState";
+import { registerClient } from "../Global/ReduxState";
 import { loginClient } from "../Api/Endpoints";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -49,7 +49,7 @@ const SignIn = () => {
 
     onSuccess: (myData) => {
       console.log(myData);
-      console.log("this is on success", dispatch(loginClients(myData.data)));
+      console.log("this is on success", dispatch(registerClient(myData.data)));
     },
   });
 
