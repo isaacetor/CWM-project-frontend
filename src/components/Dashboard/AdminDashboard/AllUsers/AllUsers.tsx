@@ -64,8 +64,8 @@ const AllUsers = () => {
               {show ? (
                 <>
                   <BtnHold>
-                    <Button bg="green">send message</Button>
-                    <Button bg="yellow">send bill</Button>
+                    <Button bg="#8b008b97">send message</Button>
+                    <Button bg="#ea06ee">send bill</Button>
                   </BtnHold>
                 </>
               ) : null}
@@ -89,6 +89,7 @@ const Button = styled.button<{ bg: string }>`
   width: 150px;
   height: 50px;
   border-radius: 20px;
+  color: white;
 `;
 
 const P4 = styled.button`
