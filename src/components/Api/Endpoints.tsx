@@ -39,3 +39,9 @@ export const loginClient = async ({ email, password }: login) => {
 export const getOneClient = async (id: any) => {
   return await axios.get(`${liveURI}/${id}`).then((res) => res.data);
 };
+
+//get all clients
+
+export const getAllClients = async () => {
+  return axios.get(`${liveURI}/`).then((res) => res.data);
+};
