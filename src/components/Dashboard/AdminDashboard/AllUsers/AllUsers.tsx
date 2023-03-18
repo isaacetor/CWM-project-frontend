@@ -1,15 +1,33 @@
 import { useQuery } from "@tanstack/react-query";
-import React from "react";
+import React, { useState } from "react";
 import { BsPerson } from "react-icons/bs";
 import styled from "styled-components";
-import { getAllClients } from "../../../Api/Endpoints";
+import { getAllClients, getOneClient } from "../../../Api/Endpoints";
+import { UseAppSelector } from "../../../Global/Store";
 import AdminDashboardSidebar from "../AdminDashboardSidebar";
 
 const AllUsers = () => {
+  const [show, setShow] = useState<boolean>(false);
+
+  const toggleShow = (id: any) => {
+    setShow(!show);
+  };
+
   const allClients = useQuery({
     queryKey: ["viewClients"],
     queryFn: getAllClients,
   });
+
+  // const user = UseAppSelector((state) => state.Client);
+
+  // console.log(user);
+
+  // const fetchUser = useQuery({
+  //   queryKey: ["Clients"],
+  //   queryFn: () => getOneClient(user?._id),
+  // });
+
+  // console.log(fetchUser);
 
   return (
     <div>
@@ -27,7 +45,13 @@ const AllUsers = () => {
 
               {/* where to see all the users in selected location */}
               {allClients?.data?.data?.map((props: any) => (
-                <Msg1>
+                <Msg1
+                  key={props?._id}
+                  onClick={() => {
+                    toggleShow(props?._id);
+                    console.log(`this is the id : ${props?._id}`);
+                  }}
+                >
                   <Holder>
                     <CoverImg> {props?.name.charAt().toUpperCase()}</CoverImg>
                     <P1>{props?.name} </P1>
@@ -37,6 +61,14 @@ const AllUsers = () => {
                   <P4>{props?.phoneNumber} </P4>
                 </Msg1>
               ))}
+              {show ? (
+                <>
+                  <BtnHold>
+                    <Button bg="green">send message</Button>
+                    <Button bg="yellow">send bill</Button>
+                  </BtnHold>
+                </>
+              ) : null}
               <Analytics> </Analytics>
             </First>
             {/* sidebar */}
@@ -49,6 +81,16 @@ const AllUsers = () => {
 };
 
 export default AllUsers;
+
+const BtnHold = styled.div``;
+
+const Button = styled.button<{ bg: string }>`
+  background-color: ${(props) => props.bg};
+  width: 150px;
+  height: 50px;
+  border-radius: 20px;
+`;
+
 const P4 = styled.button`
   margin: 0;
   /* color: black; */
@@ -89,7 +131,7 @@ const P1 = styled.div`
   font-weight: 500;
 `;
 
-const Msg1 = styled.div`
+const Msg1 = styled.button`
   width: calc(100% - 20px);
   height: 10vh;
   background-color: white;
