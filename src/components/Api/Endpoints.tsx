@@ -45,3 +45,16 @@ export const getOneClient = async (id: any) => {
 export const getAllClients = async () => {
   return axios.get(`${liveURI}/`).then((res) => res.data);
 };
+
+//dashboard
+
+// const liveURI1 = `https://cwmendpoint-server.onrender.com/api/clientdashboard`;
+
+//this will be mapped on the admindashboard
+export const getAllClientMsg = async () => {
+  return await axios
+    .get(
+      `https://cwmendpoint-server.onrender.com/clientdashboard/allclientmessages`
+    )
+    .then((res) => res.data);
+};

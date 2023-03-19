@@ -1,8 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-import hero from "../../Assets/Waste_management.svg";
+import hero from "../../Assets/one.jpg";
+// import hero3 from "../../Assets/two.jpg";
+import hero4 from "../../Assets/three.jpg";
+// import hero from "../../Assets/Waste_management.svg";
 import hero3 from "../../Assets/Waste_management3.svg";
-import hero4 from "../../Assets/waste-management4.svg";
+// import hero4 from "../../Assets/waste-management4.svg";
 import { FiArrowUpRight } from "react-icons/fi";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -43,14 +46,14 @@ const Hero = () => {
             </LeftWrapper>
           </Left>
           <Right>
-            <LeftWrapper height="90%">
+            <LeftWrapper2>
               <Slider {...settings}>
-                <Img src={hero} alt="" />
+                <img src={hero} alt="" />
 
-                <Img src={hero3} alt="" />
-                <Img src={hero4} alt="" />
+                <img src={hero3} alt="" />
+                <img src={hero4} alt="" />
               </Slider>
-            </LeftWrapper>
+            </LeftWrapper2>
           </Right>
         </Wrapper>
       </Container>
@@ -60,7 +63,11 @@ const Hero = () => {
 
 export default Hero;
 
-const Img = styled.img``;
+const Img = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+`;
 
 const Desc = styled.p`
   color: #00002d86;
@@ -75,7 +82,7 @@ const Button = styled.button`
   margin-top: 40px;
   font-size: 14.5px;
   border: 0;
-  background-color: #5057fd;
+  background-color: #e21818;
   text-transform: capitalize;
   transition: all ease-in-out 0.2s;
   color: #fff;
@@ -83,13 +90,13 @@ const Button = styled.button`
   display: flex;
   align-items: center;
   gap: 5px;
-  border: 1px solid #5057fd;
+  border: 1px solid #e21818;
 
   :hover {
     cursor: pointer;
     background-color: transparent;
-    border: 1px solid #5057fd;
-    color: #5057fd;
+    border: 1px solid #e21818;
+    color: #e21818;
   }
 
   @media screen and (max-width: 768px) {
@@ -115,8 +122,8 @@ const Title = styled.h1`
 const Caption = styled.div`
   padding: 10px 20px;
   width: 250px;
-  background-color: #f5f5ff;
-  color: #5057fd;
+  background-color: #fff6f5;
+  color: #e21818;
   border-radius: 10px;
   font-weight: 500;
   text-transform: capitalize;
@@ -134,19 +141,32 @@ const LeftWrapper = styled.div<{ height: string }>`
   @media screen and (max-width: 768px) {
     height: ${({ height }) => height};
   }
+`;
+const LeftWrapper2 = styled.div`
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  background: rgb(226, 24, 24);
+  background: linear-gradient(
+    159deg,
+    rgba(226, 24, 24, 1) 63%,
+    rgba(253, 132, 31, 1) 100%
+  );
 
   img {
-    @media screen and (max-width: 768px) {
-      height: 100%;
-      width: 100%;
-      object-fit: cover;
-    }
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+  }
+
+  @media screen and (max-width: 768px) {
+    height: 100%;
   }
 `;
 const Right = styled.div`
   width: 50%;
   height: 95vh;
-  background-color: #000000;
+  background-color: #942b2b;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -154,6 +174,7 @@ const Right = styled.div`
   @media screen and (max-width: 768px) {
     height: 55vh;
     width: 100%;
+    margin-top: 20px;
   }
 
   @media screen and (max-width: 1440px) {
@@ -174,10 +195,6 @@ const Left = styled.div`
   @media screen and (max-width: 1440px) {
     min-width: 50%;
   }
-  /* @media screen and (min-width: 320px) {
-    width: 100%;
-    height: 50vh;
-  } */
 `;
 const Wrapper = styled.div`
   width: 100%;
@@ -188,9 +205,6 @@ const Wrapper = styled.div`
   @media screen and (max-width: 768px) {
     width: 100%;
   }
-  /* @media screen and (min-width: 320px) {
-    width: 100%;
-  } */
 `;
 const Container = styled.div`
   width: 100%;

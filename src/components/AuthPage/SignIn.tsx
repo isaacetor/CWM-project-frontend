@@ -159,7 +159,7 @@ const Button = styled.button`
   margin-bottom: 20px;
   padding: 15px 25px;
   width: 100%;
-  background-color: #334cd2;
+  background-color: #e21818;
   color: #fff;
   font-size: 1rem;
   border: 0;
@@ -167,7 +167,7 @@ const Button = styled.button`
 
   :hover {
     cursor: pointer;
-    background-color: #166afa;
+    background-color: #e21818;
   }
 
   span {
@@ -223,7 +223,7 @@ const InputHold = styled.div`
     border: 2px solid #00000016;
 
     :focus {
-      border: 2px solid #337eff;
+      border: 2px solid #e21818;
     }
   }
 `;
@@ -375,7 +375,7 @@ const Top = styled.div`
 
 const Container = styled.div`
   width: 100%;
-  background-color: #ecf2ff;
+  background-color: #fff4ec;
   display: flex;
   align-items: center;
   flex-direction: column;

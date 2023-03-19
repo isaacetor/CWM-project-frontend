@@ -61,9 +61,9 @@ const Container = styled.div`
     padding: 13px 27px;
     font-size: 18px;
     margin-top: 20px;
-    background-color: #5057fd;
+    background-color: #e21818;
     transition: all 0.3s ease;
-    border: 1px solid #5057fd;
+    border: 1px solid #e21818;
     border-radius: 25px;
     display: flex;
     align-items: center;
@@ -71,8 +71,8 @@ const Container = styled.div`
     text-transform: capitalize;
 
     :hover {
-      border: 1px solid #5057fd;
-      color: #5057fd;
+      border: 1px solid #e21818;
+      color: #e21818;
       cursor: pointer;
       background-color: transparent;
       gap: 15px;

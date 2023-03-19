@@ -1,8 +1,16 @@
+import { useQuery } from "@tanstack/react-query";
 import React from "react";
 import { GoPrimitiveDot } from "react-icons/go";
 import styled from "styled-components";
+import { getAllAdminMsg } from "../../Api/adminApi";
 
 const UserNotification = () => {
+  const allAdminMsg = useQuery({
+    queryKey: ["viewAdminMsg"],
+    queryFn: getAllAdminMsg,
+  });
+
+  console.log(`this is all client message ${allAdminMsg}`);
   return (
     <div>
       <Top1>
@@ -20,24 +28,13 @@ const UserNotification = () => {
           </Two>
         </Notify>
         <MsgHold>
-          <Msg>
-            <p>sender:CWM Admin</p>
-            <p>12/03/2023</p>
-            <span>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur
-              doloremque molestias iure cum repudiandae ut vitae harum, placeat
-              rerum dignissimos ea laudantium minima, quibusdam neque. At
-              excepturi voluptas asperiores error!
-            </span>
-          </Msg>
-          <Msg></Msg>
-          <Msg></Msg>
-          <Msg></Msg>
-          <Msg></Msg>
-          <Msg></Msg>
-          <Msg></Msg>
-          <Msg></Msg>
-          <Msg></Msg>
+          {allAdminMsg?.data?.data?.map((props: any) => (
+            <Msg>
+              <p>sender:{props?.sender} </p>
+              <p>{props?.date} </p>
+              <span>{props?.desc}</span>
+            </Msg>
+          ))}
         </MsgHold>
       </Top1>
     </div>

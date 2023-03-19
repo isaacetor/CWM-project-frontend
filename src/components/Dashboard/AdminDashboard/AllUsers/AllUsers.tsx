@@ -1,14 +1,12 @@
 import { useQuery } from "@tanstack/react-query";
 import React, { useState } from "react";
 import { BsPerson } from "react-icons/bs";
-import { useNavigate, useParams } from "react-router-dom";
 import styled from "styled-components";
 import { getAllClients, getOneClient } from "../../../Api/Endpoints";
 import { UseAppSelector } from "../../../Global/Store";
 import AdminDashboardSidebar from "../AdminDashboardSidebar";
 
 const AllUsers = () => {
-  const navigate = useNavigate();
   const [show, setShow] = useState<boolean>(false);
 
   const toggleShow = (id: any) => {
@@ -46,13 +44,12 @@ const AllUsers = () => {
               <Income></Income>
 
               {/* where to see all the users in selected location */}
-              {allClients?.data?.data?.map((props: any) => (
+              {allClients?.data?.map((props: any) => (
                 <Msg1
                   key={props?._id}
                   onClick={() => {
-                    navigate("/send-message");
-                    // toggleShow(props?._id);
-                    // console.log(`this is the id : ${props?._id}`);
+                    toggleShow(props?._id);
+                    console.log(`this is the id : ${props?._id}`);
                   }}
                 >
                   <Holder>
@@ -67,15 +64,7 @@ const AllUsers = () => {
               {show ? (
                 <>
                   <BtnHold>
-                    <Button
-                      onClick={(id: any) => {
-                        navigate("/send-message");
-                        console.log(allClients);
-                      }}
-                      bg="#8b008b97"
-                    >
-                      send message
-                    </Button>
+                    <Button bg="#8b008b97">send message</Button>
                     <Button bg="#ea06ee">send bill</Button>
                   </BtnHold>
                 </>
