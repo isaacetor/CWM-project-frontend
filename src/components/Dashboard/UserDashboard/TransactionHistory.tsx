@@ -243,6 +243,6 @@ const Bottom1 = styled.div`
   box-shadow: rgba(0, 0, 0, 0.027) 1.95px 1.95px 2.6px;
 
   @media screen and (max-width: 768px) {
-    width: 95vw;
+    width: 92vw;
   }
 `;

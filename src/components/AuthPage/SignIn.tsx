@@ -98,7 +98,7 @@ const SignIn = () => {
               <h2>sign in to your account</h2>
               <InputWrapper>
                 <InputHold>
-                  <p>Enter name</p>
+                  <p>Enter email</p>
 
                   <input
                     {...register("email")}
@@ -137,7 +137,7 @@ const SignIn = () => {
                     style={{
                       marginLeft: "5px",
                       textDecoration: "none",
-                      color: "#337eff",
+                      color: "#e21818",
                     }}
                   >
                     Create one
@@ -221,6 +221,8 @@ const InputHold = styled.div`
     outline: 0;
     border-radius: 5px;
     border: 2px solid #00000016;
+    padding: 5px;
+    padding-left: 10px;
 
     :focus {
       border: 2px solid #e21818;
@@ -229,12 +231,13 @@ const InputHold = styled.div`
 `;
 
 const Form = styled.form`
-  width: 80%;
-  height: 55vh;
+  width: 75%;
+  height: 60vh;
   background-color: #fff;
   border-radius: 20px;
   display: flex;
   align-items: center;
+  justify-content: center;
   flex-direction: column;
 
   h2 {
@@ -317,6 +320,7 @@ const Right = styled.div`
 
   @media screen and (max-width: 768px) {
     width: 100%;
+    display: none;
   }
 `;
 
@@ -325,6 +329,8 @@ const Bottom = styled.div`
   display: flex;
   flex-wrap: wrap-reverse;
   margin-bottom: 10px;
+  position: absolute;
+  top: 150px;
 
   @media screen and (max-width: 768px) {
     width: 90%;
@@ -375,8 +381,11 @@ const Top = styled.div`
 
 const Container = styled.div`
   width: 100%;
+  min-height: 100vh;
+  max-height: 100%;
   background-color: #fff4ec;
   display: flex;
   align-items: center;
   flex-direction: column;
+  position: relative;
 `;
