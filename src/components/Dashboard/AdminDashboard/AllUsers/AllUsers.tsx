@@ -44,7 +44,7 @@ const AllUsers = () => {
               <Income></Income>
 
               {/* where to see all the users in selected location */}
-              {allClients?.data?.data?.map((props: any) => (
+              {allClients?.data?.map((props: any) => (
                 <Msg1
                   key={props?._id}
                   onClick={() => {

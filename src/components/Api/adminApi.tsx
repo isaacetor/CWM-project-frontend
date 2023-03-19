@@ -45,3 +45,14 @@ export const sendMsg = async (
     .post(`${liveURI2}/admintoclient/${AdminId}/${Userid}`, { desc })
     .then((res) => res.data);
 };
+
+//dashboard
+
+//this will be mapped on the clientdashboard
+export const getAllAdminMsg = async () => {
+  return await axios
+    .get(
+      `https://cwmendpoint-server.onrender.com/admindasboard/alladminmessages`
+    )
+    .then((res) => res.data);
+};

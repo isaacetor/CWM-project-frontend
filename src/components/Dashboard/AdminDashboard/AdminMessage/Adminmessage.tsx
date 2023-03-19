@@ -3,14 +3,13 @@ import { BsPerson } from "react-icons/bs";
 import styled from "styled-components";
 import AdminDashboardSidebar from "../AdminDashboardSidebar";
 import { liveURI2, sendMsg } from "../../../Api/adminApi";
-import { useMutation, useQuery } from "@tanstack/react-query";
+import { useMutation } from "@tanstack/react-query";
 import { UseAppSelector } from "../../../Global/Store";
 import axios from "axios";
 import Swal from "sweetalert2";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
-import { getAllClients } from "../../../Api/Endpoints";
 
 const Adminmessage = () => {
   const schema = yup
@@ -29,19 +28,11 @@ const Adminmessage = () => {
   });
 
   const adminID = UseAppSelector((state) => state.Admin);
-  // const clientID = UseAppSelector((state) => state.Client);
-
-  const allClients = useQuery({
-    queryKey: ["viewClients"],
-    queryFn: getAllClients,
-  });
+  const clientID = UseAppSelector((state) => state.Client);
 
   const onSubmit = handleSubmit(async (data) => {
     await axios
-      .post(
-        `${liveURI2}/admintoclient/${adminID?._id}/${allClients?.data?.data?._id}`,
-        data
-      )
+      .post(`${liveURI2}/admintoclient/${adminID?._id}/${clientID?._id}`, data)
 
       .then((res) => {
         Swal.fire({
@@ -57,9 +48,7 @@ const Adminmessage = () => {
           text: `${err.response?.data?.message}`,
         });
         console.log(err);
-        console.log(
-          `these are the ids ${adminID?._id} and ${allClients?.data?.data?._id}`
-        );
+        console.log(`these are the ids ${adminID?._id} and ${clientID?._id}`);
       });
   });
 

@@ -2,13 +2,15 @@ import { useQuery } from "@tanstack/react-query";
 import React from "react";
 import { GoPrimitiveDot } from "react-icons/go";
 import styled from "styled-components";
-import { getAllClients } from "../../Api/Endpoints";
+import { getAllAdminMsg } from "../../Api/adminApi";
 
 const UserNotification = () => {
-  const allClients = useQuery({
-    queryKey: ["viewClients"],
-    queryFn: getAllClients,
+  const allAdminMsg = useQuery({
+    queryKey: ["viewAdminMsg"],
+    queryFn: getAllAdminMsg,
   });
+
+  console.log(`this is all client message ${allAdminMsg}`);
   return (
     <div>
       <Top1>
@@ -25,28 +27,15 @@ const UserNotification = () => {
             </Unread>
           </Two>
         </Notify>
-        {allClients?.data.data?.map((props: any) => (
-          <MsgHold>
+        <MsgHold>
+          {allAdminMsg?.data?.data?.map((props: any) => (
             <Msg>
-              <p>sender:CWM Admin</p>
-              <p>12/03/2023</p>
-              <span>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Pariatur doloremque molestias iure cum repudiandae ut vitae
-                harum, placeat rerum dignissimos ea laudantium minima, quibusdam
-                neque. At excepturi voluptas asperiores error!
-              </span>
+              <p>sender:{props?.sender} </p>
+              <p>{props?.date} </p>
+              <span>{props?.desc}</span>
             </Msg>
-            <Msg></Msg>
-            <Msg></Msg>
-            <Msg></Msg>
-            <Msg></Msg>
-            <Msg></Msg>
-            <Msg></Msg>
-            <Msg></Msg>
-            <Msg></Msg>
-          </MsgHold>
-        ))}
+          ))}
+        </MsgHold>
       </Top1>
     </div>
   );
