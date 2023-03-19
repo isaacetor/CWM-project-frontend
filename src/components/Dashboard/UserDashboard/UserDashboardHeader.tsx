@@ -9,13 +9,13 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { logOut } from "../../Global/ReduxState";
 import { UseAppDispatch } from "../../Global/Store";
 
-
 const UserDashboardHeader = () => {
   const dispatch = UseAppDispatch();
   const navigate = useNavigate();
 
   return (
     <div>
+      {/* <MobileWrapper> */}
       <Container>
         <Wrapper>
           <LogoNav>
@@ -33,10 +33,6 @@ const UserDashboardHeader = () => {
                 <BsWallet2 style={{ fontSize: "20px" }} />
                 Make Payment
               </Nav>
-              {/* <Nav to="/contact">
-                <BiSupport style={{ fontSize: "20px" }} />
-                Customer Support
-              </Nav> */}
               <Nav to="/profile">
                 <BsPerson style={{ fontSize: "20px" }} />
                 Profile
@@ -54,7 +50,9 @@ const UserDashboardHeader = () => {
             logout
           </LogOut>
         </Wrapper>
+        <MobileWrapper></MobileWrapper>
       </Container>
+      {/* </MobileWrapper> */}
     </div>
   );
 };
@@ -119,6 +117,22 @@ const Wrapper = styled.div`
   justify-content: space-between;
   flex-direction: column;
 `;
+
+const MobileWrapper = styled.div`
+  display: block;
+
+  @media screen and (max-width: 800px) {
+    display: block;
+    width: 100vw;
+    height: 10vh;
+    background-color: #03001c;
+    position: absolute;
+    overflow: hidden;
+    bottom: 0;
+    z-index: 9990px;
+  }
+`;
+
 const Container = styled.div`
   width: 270px;
   height: 100vh;
@@ -128,4 +142,8 @@ const Container = styled.div`
   align-items: center;
   position: fixed;
   overflow: hidden;
+
+  @media screen and (max-width: 800px) {
+    display: none;
+  }
 `;

@@ -118,12 +118,16 @@ const Bottom2 = styled.div`
     font-size: 14px;
     font-weight: 300;
   }
+
+  @media screen and (max-width: 768px) {
+    width: 95vw;
+  }
 `;
 
 const Top2 = styled.div`
   width: 90%;
   height: 50vh;
-  background-color: white;
+  background-color: #ffffff;
   border-radius: 10px;
   margin: 10px;
   box-shadow: rgba(0, 0, 0, 0.027) 1.95px 1.95px 2.6px;
@@ -146,6 +150,10 @@ const Top2 = styled.div`
   img {
     margin-top: 10px;
     width: 90%;
+  }
+
+  @media screen and (max-width: 768px) {
+    width: 95vw;
   }
 `;
 

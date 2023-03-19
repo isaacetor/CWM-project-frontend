@@ -45,10 +45,18 @@ const Register = () => {
   const newClient = useMutation({
     mutationFn: (data: any) => createClient(data),
     mutationKey: ["registerClients"],
-
     onSuccess: (data: any) => {
-      console.log("my data", data);
+      // console.log("my data", data);
       dispatch(registerClient(data.data));
+    },
+    onError: (error: any) => {
+      console.log("error", error);
+      // handle error here
+      Swal.fire({
+        title: "registration failed",
+        text: error.message,
+        icon: "error",
+      });
     },
   });
   const submit = handleSubmit((data) => {
@@ -62,7 +70,7 @@ const Register = () => {
       timerProgressBar: true,
 
       willClose: () => {
-        navigate("/userdashoard");
+        navigate("/userdashboard");
       },
     });
   });

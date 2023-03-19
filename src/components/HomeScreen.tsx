@@ -13,12 +13,12 @@ const HomeScreen = () => {
     <div style={{ overflow: "hidden" }}>
       <Header />
       <Hero />
-      <Footer />
       <ManageAccount />
       <TrustedBy />
       <Profile />
       <Features />
       <GetStarted />
+      <Footer />
     </div>
   );
 };

@@ -79,6 +79,10 @@ const Unread = styled.div`
     margin-left: 5px;
     font-size: 16px;
   }
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
 `;
 
 const Read = styled.div`
@@ -94,6 +98,9 @@ const Read = styled.div`
     font-weight: 600;
     margin-left: 5px;
     font-size: 16px;
+  }
+  @media screen and (max-width: 768px) {
+    display: none;
   }
 `;
 
@@ -116,6 +123,10 @@ const One = styled.div`
   margin-left: 20px;
   display: flex;
   align-items: center;
+
+  @media screen and (max-width: 768px) {
+    font-size: 16px;
+  }
 `;
 
 const Msg = styled.div`
@@ -130,14 +141,19 @@ const Msg = styled.div`
   overflow-x: hidden;
 
   white-space: nowrap;
-  max-width: calc(100% - 20px);
+  max-width: calc(100% - 10px);
   text-overflow: ellipsis;
+  padding-top: 5px;
 
   p {
     margin: 0;
     color: #aaa9b8;
     font-size: 12px;
     margin-left: 5px;
+
+    @media screen and (max-width: 768px) {
+      font-size: 11px;
+    }
   }
   span {
     margin-left: 5px;
@@ -154,19 +170,15 @@ const Notify = styled.div`
 `;
 
 const Top1 = styled.div`
-  width: 95%;
+  width: 52%;
   height: 42vh;
-  background-color: white;
+  background-color: #ffffff;
   border-radius: 10px;
   margin: 10px;
   padding-bottom: 20px;
   box-shadow: rgba(0, 0, 0, 0.027) 1.95px 1.95px 2.6px;
-`;
-const First = styled.div`
-  width: 870px;
-  height: 100%;
 
-  display: flex;
-  /* justify-content: space-between; */
-  flex-direction: column;
+  @media screen and (max-width: 768px) {
+    width: 95vw;
+  }
 `;
