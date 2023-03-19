@@ -13,7 +13,7 @@ function App() {
       {/* </PrivateRoutes> */}
 
       {/* <PrivateRoutes> */}
-      {/* <AdminDashboardRoutes /> */}
+      <AdminDashboardRoutes />
       {/* </PrivateRoutes> */}
     </div>
   );
