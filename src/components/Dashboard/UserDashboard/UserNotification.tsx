@@ -1,16 +1,21 @@
 import { useQuery } from "@tanstack/react-query";
-import React from "react";
-import { GoPrimitiveDot } from "react-icons/go";
+import React, { useState } from "react";
+import { GrClose } from "react-icons/gr";
 import styled from "styled-components";
 import { getAllAdminMsg } from "../../Api/adminApi";
 
 const UserNotification = () => {
+  const [show, setShow] = useState<boolean>(false);
   const allAdminMsg = useQuery({
     queryKey: ["viewAdminMsg"],
     queryFn: getAllAdminMsg,
   });
 
-  console.log(`this is all client message ${allAdminMsg}`);
+  const toggleShow = () => {
+    setShow(!show);
+  };
+
+  // console.log(`this is all client message ${allAdminMsg}`);
   return (
     <div>
       <Top1>
@@ -19,7 +24,7 @@ const UserNotification = () => {
         </Notify>
         <MsgHold>
           {allAdminMsg?.data?.data?.map((props: any) => (
-            <Msg>
+            <Msg onClick={toggleShow}>
               <p style={{ fontWeight: "600" }}>sender: {props?.sender} </p>
               <p>{props?.date} </p>
               <span>{props?.desc}</span>
@@ -27,11 +32,78 @@ const UserNotification = () => {
           ))}
         </MsgHold>
       </Top1>
+      {show ? (
+        <OpenMessage>
+          <span onClick={toggleShow}>
+            <GrClose style={{ color: "#fff" }} />
+          </span>
+          <MessageBox>
+            <h2>Message</h2>
+            <h3>From: Admin</h3>
+            <h4>Date:</h4>
+            <p>hdjhdjhjhd</p>
+          </MessageBox>
+        </OpenMessage>
+      ) : null}
     </div>
   );
 };
 
 export default UserNotification;
+
+const MessageBox = styled.div`
+  width: 40%;
+  height: 50vh;
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  padding: 20px;
+
+  @media screen and (max-width: 768px) {
+    width: 88%;
+  }
+
+  h2 {
+    margin: 0;
+    font-weight: 600;
+    border-bottom: 1px solid #00000021;
+  }
+
+  h3 {
+    font-weight: 500;
+    margin: 0;
+    margin-top: 20px;
+  }
+
+  h4 {
+    margin: 0;
+    margin-top: 5px;
+    font-weight: 500;
+    font-size: 15px;
+  }
+`;
+
+const OpenMessage = styled.div`
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  background-color: #0000003c;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  span {
+    width: 50%;
+    right: 0;
+    font-size: 20px;
+    font-weight: 800;
+    cursor: pointer;
+  }
+`;
 
 const MsgHold = styled.div`
   overflow-y: scroll;
@@ -171,6 +243,7 @@ const Top1 = styled.div`
   margin: 10px;
   padding-bottom: 20px;
   box-shadow: rgba(0, 0, 0, 0.027) 1.95px 1.95px 2.6px;
+  position: relative;
 
   @media screen and (max-width: 768px) {
     width: 95vw;
