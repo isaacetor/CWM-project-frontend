@@ -16,21 +16,11 @@ const UserNotification = () => {
       <Top1>
         <Notify>
           <One>Notifications</One>
-          <Two>
-            <Read>
-              <GoPrimitiveDot />
-              <p> Read</p>
-            </Read>
-            <Unread>
-              <GoPrimitiveDot />
-              <p> Unread</p>
-            </Unread>
-          </Two>
         </Notify>
         <MsgHold>
           {allAdminMsg?.data?.data?.map((props: any) => (
             <Msg>
-              <p>sender:{props?.sender} </p>
+              <p style={{ fontWeight: "600" }}>sender: {props?.sender} </p>
               <p>{props?.date} </p>
               <span>{props?.desc}</span>
             </Msg>
@@ -111,7 +101,7 @@ const Two = styled.div`
 `;
 
 const One = styled.div`
-  width: 40%;
+  width: 95%;
   height: 100%;
   color: black;
   font-weight: 600;
@@ -120,6 +110,7 @@ const One = styled.div`
   margin-left: 20px;
   display: flex;
   align-items: center;
+  border-bottom: 1px solid rgba(226, 24, 24, 0.133);
 
   @media screen and (max-width: 768px) {
     font-size: 16px;
@@ -136,7 +127,8 @@ const Msg = styled.div`
   border-radius: 5px;
   margin-bottom: 10px;
   overflow-x: hidden;
-
+  background-color: #ff440018;
+  transition: all 0.2s ease;
   white-space: nowrap;
   max-width: calc(100% - 10px);
   text-overflow: ellipsis;
@@ -157,6 +149,11 @@ const Msg = styled.div`
     color: #45454b;
     font-size: 13px;
   }
+
+  :hover {
+    cursor: pointer;
+    background-color: #ff440025;
+  }
 `;
 
 const Notify = styled.div`
@@ -167,7 +164,7 @@ const Notify = styled.div`
 `;
 
 const Top1 = styled.div`
-  width: 52%;
+  width: 95%;
   height: 42vh;
   background-color: #ffffff;
   border-radius: 10px;

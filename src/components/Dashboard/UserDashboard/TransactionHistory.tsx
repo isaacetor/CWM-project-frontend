@@ -50,7 +50,7 @@ const Msg = styled.div`
   border-radius: 5px;
   margin-bottom: 10px;
   overflow-x: hidden;
-
+  background-color: #ff440018;
   white-space: nowrap;
   max-width: calc(100% - 20px);
   text-overflow: ellipsis;
@@ -90,7 +90,7 @@ const MsgHold = styled.div`
 `;
 
 const One = styled.div`
-  width: 40%;
+  width: 95%;
   height: 100%;
   color: black;
   font-weight: 600;
@@ -99,6 +99,7 @@ const One = styled.div`
   margin-left: 20px;
   display: flex;
   align-items: center;
+  border-bottom: 1px solid rgba(226, 24, 24, 0.133);
 
   @media screen and (max-width: 768px) {
     font-size: 15px;
@@ -166,7 +167,7 @@ const P1 = styled.div`
 const Msg1 = styled.div`
   width: calc(100% - 20px);
   height: 10vh;
-
+  background-color: #ff440018;
   margin-left: 10px;
   margin-right: 10px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
@@ -208,9 +209,9 @@ const CoverImg = styled.div`
 
 const Record = styled.div`
   width: calc(100% - 50px);
-  /* width: 100%; */
+
   height: 3vh;
-  /* background-color: red; */
+
   margin-left: 30px;
 
   border-radius: 5px;
@@ -233,7 +234,7 @@ const Record = styled.div`
 `;
 
 const Bottom1 = styled.div`
-  width: 52%;
+  width: 95%;
   height: 45vh;
   background-color: white;
   border-radius: 10px;
