@@ -1,8 +1,14 @@
+import { useQuery } from "@tanstack/react-query";
 import React from "react";
 import { GoPrimitiveDot } from "react-icons/go";
 import styled from "styled-components";
+import { getAllClients } from "../../Api/Endpoints";
 
 const UserNotification = () => {
+  const allClients = useQuery({
+    queryKey: ["viewClients"],
+    queryFn: getAllClients,
+  });
   return (
     <div>
       <Top1>
@@ -19,26 +25,28 @@ const UserNotification = () => {
             </Unread>
           </Two>
         </Notify>
-        <MsgHold>
-          <Msg>
-            <p>sender:CWM Admin</p>
-            <p>12/03/2023</p>
-            <span>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur
-              doloremque molestias iure cum repudiandae ut vitae harum, placeat
-              rerum dignissimos ea laudantium minima, quibusdam neque. At
-              excepturi voluptas asperiores error!
-            </span>
-          </Msg>
-          <Msg></Msg>
-          <Msg></Msg>
-          <Msg></Msg>
-          <Msg></Msg>
-          <Msg></Msg>
-          <Msg></Msg>
-          <Msg></Msg>
-          <Msg></Msg>
-        </MsgHold>
+        {allClients?.data.data?.map((props: any) => (
+          <MsgHold>
+            <Msg>
+              <p>sender:CWM Admin</p>
+              <p>12/03/2023</p>
+              <span>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Pariatur doloremque molestias iure cum repudiandae ut vitae
+                harum, placeat rerum dignissimos ea laudantium minima, quibusdam
+                neque. At excepturi voluptas asperiores error!
+              </span>
+            </Msg>
+            <Msg></Msg>
+            <Msg></Msg>
+            <Msg></Msg>
+            <Msg></Msg>
+            <Msg></Msg>
+            <Msg></Msg>
+            <Msg></Msg>
+            <Msg></Msg>
+          </MsgHold>
+        ))}
       </Top1>
     </div>
   );
