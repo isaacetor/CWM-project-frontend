@@ -85,5 +85,5 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #ecf2ff92;
+  background-color: #fff2ec92;
 `;

@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import bill from "../../../Assets/bill.svg";
+import bill from "../../../Assets/bill.jpg";
 import card from "../../../Assets/eWasteCard.png";
 
 const UserDashboardSidebar = () => {
@@ -126,7 +126,6 @@ const Bottom2 = styled.div`
 
 const Top2 = styled.div`
   width: 90%;
-  height: 50vh;
   background-color: #ffffff;
   border-radius: 10px;
   margin: 10px;
@@ -160,6 +159,7 @@ const Top2 = styled.div`
 const Image = styled.div`
   height: 70%;
   width: 100%;
+  margin: 10px;
 
   img {
     width: 100%;

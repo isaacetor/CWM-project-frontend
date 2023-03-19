@@ -101,11 +101,12 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #ecf2ff92;
+  background-color: #fff2ec92;
+
   overflow: hidden;
 
   @media screen and (max-width: 768px) {
     width: 100vw;
-    background-color: #f1f4fb92;
+    /* background-color: #f1f4fb92; */
   }
 `;
