@@ -99,6 +99,11 @@ const One = styled.div`
   margin-left: 20px;
   display: flex;
   align-items: center;
+
+  @media screen and (max-width: 768px) {
+    font-size: 15px;
+    width: 60%;
+  }
 `;
 
 const Notify = styled.div`
@@ -138,6 +143,11 @@ const P2 = styled.div`
   margin-right: 60px;
   font-weight: 500;
   width: 180px;
+
+  @media screen and (max-width: 768px) {
+    font-size: 10px;
+    width: 100px;
+  }
 `;
 const P1 = styled.div`
   margin: 0;
@@ -146,6 +156,11 @@ const P1 = styled.div`
   margin-right: 18px;
   width: 120px;
   font-weight: 500;
+
+  @media screen and (max-width: 768px) {
+    font-size: 10px;
+    width: 100px;
+  }
 `;
 
 const Msg1 = styled.div`
@@ -182,6 +197,13 @@ const CoverImg = styled.div`
   font-weight: 500;
   margin-left: 10px;
   margin-right: 5px;
+
+  @media screen and (max-width: 768px) {
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+    margin-right: 20px;
+  }
 `;
 
 const Record = styled.div`
@@ -211,11 +233,15 @@ const Record = styled.div`
 `;
 
 const Bottom1 = styled.div`
-  width: 95%;
+  width: 52%;
   height: 45vh;
   background-color: white;
   border-radius: 10px;
   margin: 10px;
   padding-bottom: 20px;
   box-shadow: rgba(0, 0, 0, 0.027) 1.95px 1.95px 2.6px;
+
+  @media screen and (max-width: 768px) {
+    width: 95vw;
+  }
 `;

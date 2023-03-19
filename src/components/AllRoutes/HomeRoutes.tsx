@@ -15,7 +15,6 @@ const HomeRoutes = () => {
       navigate("/userdashboard");
     }
   }, []);
-
   const element = useRoutes([
     {
       path: "/",

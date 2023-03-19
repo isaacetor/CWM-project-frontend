@@ -11,7 +11,7 @@ import { getOneClient } from "../../Api/Endpoints";
 const UserDashboardHome = () => {
   const user = UseAppSelector((state) => state.Client);
 
-  console.log(user);
+  // console.log(user);
 
   const fetchUser = useQuery({
     queryKey: ["Clients"],
@@ -45,21 +45,28 @@ export default UserDashboardHome;
 const Second = styled.div`
   width: 35%;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
 `;
 
 const First = styled.div`
   width: 70%;
   height: 100%;
-
   display: flex;
   /* justify-content: space-between; */
   flex-direction: column;
+  flex-wrap: wrap;
 `;
 
 const Main = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-between;
+
+  @media screen and (max-width: 768px) {
+    display: block;
+  }
 `;
 
 const Text = styled.div`
@@ -77,12 +84,15 @@ const Text = styled.div`
 const Wrapper = styled.div`
   width: 95%;
   /* height: 95%; */
-  /* background: brown; */
 
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
 `;
 
 const Container = styled.div`
@@ -92,4 +102,10 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   background-color: #ecf2ff92;
+  overflow: hidden;
+
+  @media screen and (max-width: 768px) {
+    width: 100vw;
+    background-color: #f1f4fb92;
+  }
 `;

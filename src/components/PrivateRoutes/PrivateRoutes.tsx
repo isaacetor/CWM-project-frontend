@@ -1,5 +1,6 @@
 import React from "react";
 import { Navigate } from "react-router-dom";
+import HomeRoutes from "../AllRoutes/HomeRoutes";
 import { UseAppSelector } from "../Global/Store";
 
 const PrivateRoutes = ({ children }: any) => {
@@ -11,11 +12,22 @@ const PrivateRoutes = ({ children }: any) => {
   } else {
     <Navigate to="/userdashboard" replace></Navigate>;
   }
+
   if (adminSelector?.name) {
     return children;
   } else {
     <Navigate to="/admin/dashboard" replace></Navigate>;
   }
+
+  //new code
+
+  //   if (selector?.name) {
+  //     return children;
+  //   } else if (adminSelector?.name) {
+  //     return children;
+  //   } else {
+  //     return <HomeRoutes />;
+  //   }
 };
 
 export default PrivateRoutes;
