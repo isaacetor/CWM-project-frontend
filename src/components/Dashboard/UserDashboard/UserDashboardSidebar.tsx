@@ -120,7 +120,7 @@ const Bottom2 = styled.div`
   }
 
   @media screen and (max-width: 768px) {
-    width: 95vw;
+    width: 92vw;
   }
 `;
 
@@ -152,7 +152,7 @@ const Top2 = styled.div`
   }
 
   @media screen and (max-width: 768px) {
-    width: 95vw;
+    width: 92vw;
   }
 `;
 

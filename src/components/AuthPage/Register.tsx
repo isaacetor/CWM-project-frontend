@@ -211,7 +211,7 @@ const Register = () => {
                     style={{
                       marginLeft: "5px",
                       textDecoration: "none",
-                      color: "#337eff",
+                      color: "#e21818",
                     }}
                   >
                     Sign in
@@ -233,7 +233,7 @@ const Button = styled.button`
   margin-bottom: 20px;
   padding: 15px 25px;
   width: 100%;
-  background-color: #334cd2;
+  background-color: #e21818;
   color: #fff;
   font-size: 1rem;
   border: 0;
@@ -241,7 +241,7 @@ const Button = styled.button`
 
   :hover {
     cursor: pointer;
-    background-color: #166afa;
+    background-color: #e40a0a;
   }
 
   span {
@@ -300,9 +300,10 @@ const InputHold = styled.div`
     outline: 0;
     border-radius: 5px;
     border: 2px solid #00000016;
+    margin: 5px;
 
     :focus {
-      border: 2px solid #337eff;
+      border: 2px solid #e21818;
     }
   }
 `;
@@ -418,6 +419,7 @@ const Right = styled.div`
 
   @media screen and (max-width: 768px) {
     width: 100%;
+    display: none;
   }
 `;
 
@@ -426,6 +428,8 @@ const Bottom = styled.div`
   display: flex;
   flex-wrap: wrap-reverse;
   margin-bottom: 10px;
+  position: absolute;
+  top: 150px;
 
   @media screen and (max-width: 768px) {
     width: 90%;
@@ -475,7 +479,10 @@ const Top = styled.div`
 
 const Container = styled.div`
   width: 100%;
-  background-color: #ecf2ff;
+  min-height: 100vh;
+  max-height: 100%;
+  background-color: #fff4ec;
+  position: relative;
   display: flex;
   align-items: center;
   flex-direction: column;

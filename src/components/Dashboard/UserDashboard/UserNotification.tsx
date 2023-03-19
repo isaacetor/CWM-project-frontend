@@ -246,6 +246,6 @@ const Top1 = styled.div`
   position: relative;
 
   @media screen and (max-width: 768px) {
-    width: 95vw;
+    width: 92vw;
   }
 `;
