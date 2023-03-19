@@ -50,7 +50,8 @@ const Header = () => {
           show
             ? "#fff"
             : "linear-gradient(90deg, #fff 50.01%, #000000 49.99%, #000000 100%)"
-        }>
+        }
+      >
         <Wrapper>
           <Logo onClick={backToTop}>Continental</Logo>
           <Nav color={show ? "#000" : "#ffffffc3"}>
@@ -169,7 +170,8 @@ const Container = styled.div<{
   background: ${({ bg }) => bg};
   display: flex;
   flex-wrap: wrap;
-  position: fixed;
+  /* position: fixed; */
+  position: absolute;
   top: 0;
   z-index: 10;
   transition: all 350ms ease;

@@ -38,14 +38,18 @@ const Features = () => {
                 <Up src={support} />
                 <Down>
                   <h1>Quick Customer Support</h1>
-                  <p>All of your questions would be answered in the app</p>
+                  <p>
+                    All of your questions would be answered in the <br /> app
+                  </p>
                 </Down>
               </Right>
               <Left>
                 <Up src={bill} alt="" />
                 <Down>
                   <h1>on Time Billing System</h1>
-                  <p>All of your questions would be answered in the app</p>
+                  <p>
+                    All of your questions would be answered in the <br /> app
+                  </p>
                 </Down>
               </Left>
             </Two>
@@ -112,11 +116,6 @@ const Text = styled.div`
       padding: 10px 20px;
       margin-top: 20px;
     }
-
-    @media screen and (min-width: 320px) {
-      margin-top: 4px;
-      padding: 5px 10px;
-    }
   }
 
   h1 {
@@ -141,7 +140,6 @@ const Text = styled.div`
     opacity: 0.9;
     margin-top: 22px;
     font-size: 16px;
-    text-align: center;
   }
 
   @media screen and (max-width: 500px) {
@@ -163,17 +161,13 @@ const Right = styled.div`
   box-shadow: rgba(33, 35, 38, 0.058) 0px 10px 10px -10px;
   width: 470px;
   height: 50vh;
-  background-color: #5057fd;
+  background-color: #e21818;
   border-radius: 20px;
   overflow: hidden;
 
   @media screen and (max-width: 500px) {
     /* border-radius: 0; */
     width: 95%;
-  }
-  @media screen and (min-width: 320px) {
-    /* border-radius: 0; */
-    height: 62vh;
   }
 `;
 
@@ -185,11 +179,6 @@ const Left = styled.div`
   color: #fff;
   border-radius: 20px;
   box-shadow: rgba(33, 35, 38, 0.058) 0px 10px 10px -10px;
-
-  @media screen and (min-width: 320px) {
-    height: 60vh;
-    text-align: left;
-  }
 `;
 
 const One = styled.div`
@@ -236,7 +225,7 @@ const Two = styled.div`
 `;
 
 const Bottom = styled.div`
-  width: 100%;
+  width: 80%;
   margin-top: 30px;
 
   @media screen and (max-width: 768px) {
