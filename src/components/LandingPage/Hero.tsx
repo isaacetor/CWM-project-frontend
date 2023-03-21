@@ -1,11 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import hero from "../../Assets/one2.jpg";
-import hero3 from "../../Assets/two.jpg";
+import hero3 from "../../Assets/hero3.jpg";
 import hero4 from "../../Assets/three.jpg";
-// import hero from "../../Assets/Waste_management.svg";
-// import hero3 from "../../Assets/Waste_management3.svg";
-// import hero4 from "../../Assets/waste-management4.svg";
 import { FiArrowUpRight } from "react-icons/fi";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -49,6 +46,9 @@ const Hero = () => {
             <Slider {...settings}>
               <div>
                 <img src={hero} alt="" />
+              </div>
+              <div>
+                <img src={hero3} alt="" />
               </div>
 
               <div>
