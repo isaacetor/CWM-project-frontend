@@ -111,7 +111,7 @@ const Navigation = styled.p`
 
   :hover {
     cursor: pointer;
-    color: #5057fd;
+    color: #ff5f08;
   }
 `;
 
@@ -133,7 +133,7 @@ const Button = styled.button<{ color: string }>`
 
   :hover {
     cursor: pointer;
-    color: #5057fd;
+    color: #ff5f08;
   }
 `;
 
@@ -151,6 +151,10 @@ const Logo = styled.div`
   img {
     width: 150px;
     object-fit: contain;
+
+    @media screen and (max-width: 425px) {
+      width: 100px;
+    }
   }
   :hover {
     cursor: pointer;
