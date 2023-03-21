@@ -63,6 +63,10 @@ const Top = styled.p`
   font-size: 18px;
   font-weight: 600;
   opacity: 0.5;
+
+  @media screen and (max-width: 800px) {
+    margin-left: 10px;
+  }
 `;
 
 const Wrapper = styled.div`

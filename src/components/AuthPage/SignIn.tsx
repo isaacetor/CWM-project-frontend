@@ -334,6 +334,7 @@ const Bottom = styled.div`
 
   @media screen and (max-width: 768px) {
     width: 90%;
+    top: 160px;
   }
 `;
 
@@ -346,7 +347,6 @@ const Top = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
-  /* position: absolute; */
   text-align: center;
 
   h2 {
@@ -359,9 +359,11 @@ const Top = styled.div`
 
     @media screen and (max-width: 768px) {
       font-size: 1.5em;
+      color: #fff;
     }
     @media screen and (max-width: 480px) {
       font-size: 1.2em;
+      color: #fff;
     }
   }
 
@@ -372,9 +374,11 @@ const Top = styled.div`
 
     @media screen and (max-width: 768px) {
       font-size: 1em;
+      color: #fff;
     }
     @media screen and (max-width: 480px) {
       font-size: 0.8em;
+      color: #fff;
     }
   }
 `;

@@ -10,7 +10,7 @@ const GetStarted = () => {
       <Container>
         <h1>
           It's easy to get started. <br /> click the button! <br />
-        </h1>{" "}
+        </h1>
         <span>👇🏼</span>
         <NavLink to="/signin" style={{ textDecoration: "none" }}>
           <button>
@@ -28,7 +28,7 @@ const Container = styled.div`
   width: 100%;
   height: 60vh;
   background-image: url(${bg});
-  background-color: #010116fa;
+  background-color: #000;
   display: flex;
   justify-content: center;
   align-items: center;

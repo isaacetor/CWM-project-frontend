@@ -68,7 +68,8 @@ const Up = styled.img`
 `;
 const Down = styled.div`
   height: 150px;
-  color: #ffffff;
+  color: #000;
+
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -161,7 +162,12 @@ const Right = styled.div`
   box-shadow: rgba(33, 35, 38, 0.058) 0px 10px 10px -10px;
   width: 470px;
   height: 50vh;
-  background-color: #e21818;
+  background: rgb(226, 24, 24);
+  background: linear-gradient(
+    159deg,
+    rgba(226, 24, 24, 1) 63%,
+    rgba(253, 132, 31, 1) 100%
+  );
   border-radius: 20px;
   overflow: hidden;
 
@@ -174,22 +180,24 @@ const Right = styled.div`
 const Left = styled.div`
   width: 390px;
   height: 50vh;
-  background-color: #0d0d0d;
+  background-color: #ffff;
   overflow: hidden;
-  color: #fff;
+  color: #000;
   border-radius: 20px;
-  box-shadow: rgba(33, 35, 38, 0.058) 0px 10px 10px -10px;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+    rgba(27, 31, 35, 0.111) 0px 0px 0px 1px;
 `;
 
 const One = styled.div`
   width: 69%;
   padding: 20px;
   margin: auto;
-  color: #f2f2f2;
+  color: #000;
   margin-top: 40px;
   margin-bottom: 20px;
-  background-color: #0d0d0d;
-  box-shadow: rgba(33, 35, 38, 0.058) 0px 10px 10px -10px;
+  background-color: #ffff;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+    rgba(27, 31, 35, 0.111) 0px 0px 0px 1px;
   border-radius: 15px;
   display: flex;
   flex-wrap: wrap;
@@ -243,7 +251,7 @@ const Top = styled.div`
     font-size: 2.3rem;
     font-weight: 700;
     text-transform: capitalize;
-    color: #f2f2f2;
+    color: #353535;
     line-height: 2.8rem;
 
     @media screen and (max-width: 768px) {
@@ -272,5 +280,5 @@ const Wrapper = styled.div`
 `;
 const Container = styled.div`
   width: 100%;
-  background-color: #000000;
+  background-color: #fefcf3;
 `;

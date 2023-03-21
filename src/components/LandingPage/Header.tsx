@@ -4,6 +4,7 @@ import { NavLink } from "react-router-dom";
 import { FiArrowUpRight } from "react-icons/fi";
 import { AiOutlineArrowUp } from "react-icons/ai";
 import { animateScroll as scroll } from "react-scroll";
+import logo from "../../Assets/continental_logo.svg";
 
 const Header = () => {
   const [show, setShow] = React.useState(false);
@@ -53,7 +54,9 @@ const Header = () => {
         }
       >
         <Wrapper>
-          <Logo onClick={backToTop}>Continental</Logo>
+          <Logo onClick={backToTop}>
+            <img src={logo} alt="" />
+          </Logo>
           <Nav color={show ? "#000" : "#ffffffc3"}>
             <Navigation onClick={toHero}>Trustees</Navigation>
             <Navigation onClick={toInterface}>Interface</Navigation>
@@ -85,7 +88,7 @@ const BackToTop = styled.div`
   position: absolute;
   position: fixed;
   bottom: 20px;
-  right: 50px;
+  right: 20px;
   box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
   font-size: 20px;
   transition: all 0.5s ease;
@@ -144,9 +147,11 @@ const Logo = styled.div`
   display: flex;
   align-items: center;
   color: #000;
-  font-size: 1.5rem;
-  font-weight: 500;
 
+  img {
+    width: 150px;
+    object-fit: contain;
+  }
   :hover {
     cursor: pointer;
   }
@@ -170,8 +175,8 @@ const Container = styled.div<{
   background: ${({ bg }) => bg};
   display: flex;
   flex-wrap: wrap;
-  /* position: fixed; */
   position: absolute;
+  position: fixed;
   top: 0;
   z-index: 10;
   transition: all 350ms ease;
