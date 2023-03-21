@@ -25,7 +25,7 @@ const Hero = () => {
       <Container>
         <Wrapper>
           <Left>
-            <LeftWrapper height="70%">
+            <LeftWrapper height="60%">
               <Caption>waste management platform</Caption>
               <Title>
                 See garbage pick-up schedule and make payment for your waste
@@ -77,7 +77,7 @@ const Button = styled.button`
   margin-top: 40px;
   font-size: 14.5px;
   border: 0;
-  background-color: #e21818;
+  background-color: #ff5f08;
   text-transform: capitalize;
   transition: all ease-in-out 0.2s;
   color: #fff;
@@ -85,13 +85,13 @@ const Button = styled.button`
   display: flex;
   align-items: center;
   gap: 5px;
-  border: 1px solid #e21818;
+  border: 1px solid #ff5f08;
 
   :hover {
     cursor: pointer;
     background-color: transparent;
-    border: 1px solid #e21818;
-    color: #e21818;
+    border: 1px solid #ff5f08;
+    color: #ff5f08;
   }
 
   @media screen and (max-width: 768px) {
@@ -108,8 +108,8 @@ const Title = styled.h1`
   text-transform: capitalize;
 
   @media screen and (max-width: 768px) {
-    font-size: 2rem;
-    width: 85%;
+    font-size: 1.5rem;
+    width: 95%;
     margin-top: 20px;
   }
 `;
@@ -117,15 +117,14 @@ const Title = styled.h1`
 const Caption = styled.div`
   padding: 10px 20px;
   width: 250px;
-  background-color: #fff6f5;
-  color: #e21818;
+  background-color: #fff9f5;
+  color: #ff5f08;
   border-radius: 10px;
   font-weight: 500;
   text-transform: capitalize;
 
   @media screen and (max-width: 768px) {
     font-size: 14px;
-    width: 300px;
   }
 `;
 
@@ -145,9 +144,9 @@ const Right = styled.div`
   justify-content: center;
 
   @media screen and (max-width: 768px) {
-    height: 55vh;
+    height: 50vh;
     width: 100%;
-    margin-top: 20px;
+    margin-top: 30px;
   }
 
   @media screen and (max-width: 1440px) {
@@ -160,7 +159,7 @@ const Right = styled.div`
     object-fit: cover;
 
     @media screen and (max-width: 768px) {
-      height: 100%;
+      height: 50vh;
       width: 100%;
     }
   }

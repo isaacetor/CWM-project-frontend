@@ -69,7 +69,6 @@ const Up = styled.img`
 const Down = styled.div`
   height: 150px;
   color: #000;
-
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -88,6 +87,10 @@ const Down = styled.div`
     font-size: 14px;
     padding-left: 30px;
     padding-top: 10px;
+
+    @media screen and (max-width: 768px) {
+      margin-bottom: 40px;
+    }
   }
 `;
 
@@ -163,11 +166,7 @@ const Right = styled.div`
   width: 470px;
   height: 50vh;
   background: rgb(226, 24, 24);
-  background: linear-gradient(
-    159deg,
-    rgba(226, 24, 24, 1) 63%,
-    rgba(253, 132, 31, 1) 100%
-  );
+  background: linear-gradient(159deg, #ff5f08 23%, rgb(226, 24, 24) 100%);
   border-radius: 20px;
   overflow: hidden;
 

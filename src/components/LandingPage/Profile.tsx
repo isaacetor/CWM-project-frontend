@@ -142,12 +142,7 @@ const Wrapper = styled.div`
 const Container = styled.div`
   width: 100%;
   background: rgb(226, 24, 24);
-  background: linear-gradient(
-    159deg,
-    rgba(226, 24, 24, 1) 63%,
-    rgba(253, 132, 31, 1) 100%
-  );
-  /* background-color: #5057fd; */
+  background: linear-gradient(159deg, #ff5f08 23%, rgb(226, 24, 24) 100%);
   margin-top: 40px;
   color: rgb(247, 247, 247);
 `;
